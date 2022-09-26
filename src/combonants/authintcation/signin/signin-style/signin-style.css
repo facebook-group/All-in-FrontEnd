@@ -1,0 +1,34 @@
+.signin-container-section {
+    padding: 150px 150px;text-transform: capitalize;
+    display: flex;background-color: rgba(187, 184, 184, 0.692);width: 100vw;
+    height: 100vh;overflow: hidden;
+}
+.signin-container-section .errorsection {
+    position: absolute;top: 0;left: 0;font-size: 3em;color: red;
+}
+.signin-container-section .WrongEmailOrPass {
+    position: absolute;color: red;
+    margin-bottom: 300px;
+}
+.signin-container-section .signup-option {
+    width: 30%;position: absolute;top: 0;left: 0;
+    margin: 150px;background-color: white;
+    padding: 25px;border-radius: 20px;display: flex;flex-direction: column;
+    align-items: center;justify-content: center;
+}
+.signin-container-section .image-holder {
+    width: 50%;position: absolute;top: 0;right: 0;
+    padding: 150px;
+}
+.signin-container-section .image-holder p {
+    text-transform: capitalize;font-weight: bold;
+    text-align: center;
+}
+.signin-container-section .image-holder img {
+    max-width: 100%;
+}
+.signin-container-section .image-holder p {
+    margin-top: 20px;
+}
+*{
+}
