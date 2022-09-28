@@ -1,5 +1,5 @@
 :root{
-    --main_color:rgba(192, 192, 192, 0.74);
+    --main_color:#B1B2FF;
 }
 
 
@@ -45,6 +45,7 @@
     transition: all .5s;z-index: 150000;
     cursor: pointer;
 }
+
 
 
 /* //------------------------------------module section ------------------------// */

@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { useDispatch,useSelector } from "react-redux"
 import { GetAllUserData } from "../../redux/GetAllInfromationUser"
 
-import "./style/personalpage.css"
+import "./style/personalpage.scss"
 
 
 
@@ -30,7 +30,7 @@ const Personal_page_information=()=>{
           {personal_data!==false?<HerderPersonal_page_information personal_data={personal_data.payload.data[0]}/>:<></>}
           <ul className="element1">
             <li>
-                {personal_data!==false?<Edite_personal_page personal_data={personal_data.payload.data[0]}/>:<></>}
+                {/* {personal_data!==false?<Edite_personal_page personal_data={personal_data.payload.data[0]}/>:<></>} */}
                 {personal_data!==false?<Myfrind_Personal personal_data={personal_data.payload.data[0].frinds}/>:<></>}
             </li>
             <li>
