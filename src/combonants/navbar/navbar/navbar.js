@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Navbar1 from "./navbar1-notification-icon";
 import Navbar2 from "./navbar2-middel-icon";
-import Navbar3 from "./navbar3-search";
-
+import logo from "../../assest/allin-logo.png";
+import {motion} from "framer-motion"
 
 
 
@@ -48,9 +48,11 @@ const Navbar=()=>{
 
     return(
         <div className="navbarcontainer">
-            <Navbar1 notification={notification}  ReportNotification={ReportNotification}/>
+                <div className="logo">
+                  <motion.img src={logo} alt=""  initial={{scale:1}} animate={{scale:1.05}} transition={{duration:1,yoyo:Infinity}} />
+                </div>
                 <Navbar2 informationbar={false}/>
-            <Navbar3/>
+                <Navbar1 notification={notification}  ReportNotification={ReportNotification}/>
        </div>
     )
 }

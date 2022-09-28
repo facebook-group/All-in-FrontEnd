@@ -1,44 +1,38 @@
-import React, { useEffect, useState }  from "react"
-import { useForm } from "react-hook-form";
-import { v4 as uuidv4 } from 'uuid';
+
+
+import React, { useState }  from "react"
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router";
+import { Formik, Form, Field } from 'formik';
+import * as Yup from 'yup';
+//The Decoded File
 import axios from 'axios';
+//Style Section The Css file And Class Have Style
+import logo from "../../../assest/allin-logo.png";
+import { v4 as uuidv4 } from 'uuid';
+
 
 
 //import file section 
 import SignupCountry from "./signup3-country";
 import SignupPhoto from "./signup-photo";
-import classes from "../style-signup/materialui-signup"; 
+import "../style-signup/signup.css"
 
 
-//yup section 
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from "yup";
-
-
-//material ui section 
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import { useNavigate } from "react-router";
-
-
-
-//shema to define the propert of the input
-const schema = yup.object({
-  fullname: yup.string().required(),
-  email: yup.string().email().required(),
-  password: yup.string().required(),
-}).required();
-
-//
-const  SignUp1=(prototype)=> {
-const Navi=useNavigate()
-const id=uuidv4();//use to create random id
-const [country,setcountry]=useState("")
-const [uploadImage,setUploadImage]=useState()
+const  SignUp1=()=> {
+const Navi=useNavigate();
+const id=uuidv4();
+const [country,setcountry]=useState("");
+const [uploadImage,setUploadImage]=useState();
+const [statusEmail,setstatusEmail]=useState(false)
 //use to show the error 
-const { register, handleSubmit, formState:{ errors } } = useForm({resolver: yupResolver(schema)});
 
 
+const initialValues={
+  email: '',
+  password:'',
+  fullName:''
+}
 
 
 //get the value of country from the chiled  using callback from signup-country
@@ -52,13 +46,13 @@ const { register, handleSubmit, formState:{ errors } } = useForm({resolver: yupR
 
 
   //data will send to the database
-  const Onsubmit = (data) =>{
-    const {fullname,email,password}=data;
+  const Get_AllData = (data) =>{
+    const {fullName,email,password}=data;
     const Random4digit = Math.floor(1000 + Math.random() * 9000);
 
     const alldata={
       regusterid:id,
-      fullName:fullname,
+      fullName:fullName,
       email:email,
       password:password
       ,place:country,
@@ -73,7 +67,7 @@ const { register, handleSubmit, formState:{ errors } } = useForm({resolver: yupR
       if(x.data.status=="Email Is ok"){
         Navi("/")
       }else if(x.data.status=="Email Is Taken"){
-       (prototype.data(true))
+        setstatusEmail(true)
       }
     })
   }  
@@ -84,20 +78,48 @@ const { register, handleSubmit, formState:{ errors } } = useForm({resolver: yupR
 
 
   return (
-  
-      <form onSubmit={handleSubmit(Onsubmit)} className="signup-option">
-      <TextField id="outlined-uncontrolled"  label="FullName" {...register("fullname")}  sx={classes.textfiled}/>
-      <p className="error">{errors.fullname?.message}</p>
+          <div class="center-signin-section"   >
+          <motion.img src={logo} alt="" className="image-forSignin"     initial={{opacity:0}} animate={{opacity:1}}     transition={{ duration: 1 }}/>
 
-      <TextField id="outlined-uncontrolled"  label="Email" defaultValue="example@yahoo.com" {...register("email")} sx={classes.textfiled}  />
-      <p className="error">{errors.email?.message}</p>
-      
-      <TextField id="outlined-uncontrolled"  label="Password"  {...register("password")} sx={classes.textfiled}  type="password" />
-      <p className="error">{errors.password?.message}</p>
-      <SignupCountry data={countrydata}/>
-      <SignupPhoto data={photodata} />
-      <Button variant="contained" type="submit" sx={classes.textfiled}>Submit All</Button>
-    </form>
+                  <Formik
+                      initialValues={initialValues}
+                      validationSchema={SignupSchema}
+                      onSubmit={Get_AllData}
+                      >
+                      {({ errors, touched }) => (
+                          <Form method="post">
+                                  <div class="txt_field">
+                                      <Field type="text"  name="fullName"  required />
+                                          <span></span>
+                                      {errors.fullName && touched.fullName ? <div className='error-section'>{errors.fullName}</div> : null}
+                                      <label>FullName</label>
+                                  </div>
+
+                                  <div class="txt_field">
+                                      <Field type="text" required name="email" />
+                                          <span></span>
+                                      {errors.email && touched.email ? <div className='error-section'>{errors.email}</div> : null}
+                                      <label>Email</label>
+                                  </div>
+                                  <div class="txt_field">
+                                      <Field type="password"  name="password"  required />
+                                          <span></span>
+                                      {errors.password && touched.password ? <div className='error-section'>{errors.password}</div> : null}
+                                      <label>Password</label>
+                                  </div>
+
+                                  <SignupCountry data={countrydata}/>
+                                  <SignupPhoto data={photodata} />
+
+                                  <motion.input type="submit" value="Sign Up"  whileHover={{scale:1.1 ,    transition: { duration: 1 ,yoyo:Infinity},}}  />
+                                  {statusEmail==true? <motion.p   initial={{scale:1}} animate={{scale:1.2}} transition={{duration:1,yoyo:Infinity}} className="verification"  style={{marginLeft:"102px",marginTop:"15px"}}>Email Is Taken</motion.p>:<p></p>}              
+
+                          </Form>
+
+                  )}
+                  </Formik>   
+                  <p style={{marginBottom:"30px"}}></p>
+          </div>
 
   );
 }
@@ -105,3 +127,28 @@ const { register, handleSubmit, formState:{ errors } } = useForm({resolver: yupR
 
 
 export default SignUp1
+
+
+//you schema style validation 
+const SignupSchema = Yup.object().shape({
+  email:Yup
+    .string()      
+    .email("Invalid email format")
+    .required("Mail is required"),
+  password: Yup.string()
+     .label('Password')
+     .min(2)
+     .max(10)
+     .required(),
+  fullName: Yup.string()
+  .label('FullName')
+  .min(5)
+  .max(10)
+  .required(),
+   });
+
+
+
+
+
+

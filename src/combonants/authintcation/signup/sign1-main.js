@@ -1,27 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import SignUp1 from "./signup-option/signup1";
-import SideSignup from "./sidesection/Sidesection-Signup";
-import "../signup/style-signup/signup.css"
+import "../signup/style-signup/signup.css";
+import reguster from "../../assest/reguster.png";
+import {motion} from "framer-motion"
 
 
 
 
 
 const Signup=()=>{
-    const [stateemail,setstateemail]=useState(false)
-    const statusemail=(data)=>{
-        setstateemail(data)
-    }
     return(
-        <div className="signup-container">
-            <div className="signup-onformation">
-                <h1>signup</h1>
-                <p>you have the acces to signup</p>
+        <motion.div className="signup-container" initial={{opacity:0}} animate={{opacity:1}} transition={{duration:1}}>
+            <div className="side-section">
+                <motion.img src={reguster} alt=""  style={{width:"100%",height:"500px"}} initial={{y:-50}} animate={{y:0}} transition={{duration:3,yoyo:Infinity}}/>
+                <p>Welcome to our little family, we are ready to share the best moments</p>
             </div>
-        <SideSignup/>
-        <SignUp1 data={statusemail}/>
-        {stateemail?<p className="stateemail">email is token</p>:<></>}
-        </div>
+            <SignUp1 />
+        </motion.div>
     )
 }  
 

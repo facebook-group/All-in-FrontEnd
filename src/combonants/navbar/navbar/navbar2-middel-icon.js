@@ -21,23 +21,29 @@ const Navbar2=()=>{
 
     return(
         <ul className="selectdataneed" >
-            <BottomNavigation sx={{ width: 500 }} value={getvalue} onChange={handleChange}>
+            <BottomNavigation sx={{ width: 600,height:40 }}  value={getvalue} onChange={handleChange}>
             <BottomNavigationAction
+            style={{color:"rgb(31, 31, 94)"}}
                 label="Home"
                 value="/home"
                 icon={<CottageIcon />}
             />
             <BottomNavigationAction
+            style={{color:"rgb(31, 31, 94)"}}
                 label="All Frind"
                 value="/frind"
                 icon={<GroupIcon />}
             />
             <BottomNavigationAction
+            style={{color:"rgb(31, 31, 94)"}}
                 label="Store"
                 value="/store"
                 icon={<Shop2Icon />}
             />
-            <BottomNavigationAction label="My Shope" value="/myshop" icon={<AddBusinessIcon />} />
+            <BottomNavigationAction
+            style={{color:"rgb(31, 31, 94)"}}
+             label="My Shope" value="/myshop"
+              icon={<AddBusinessIcon />} />
             </BottomNavigation>
         </ul>
     )

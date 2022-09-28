@@ -19,6 +19,8 @@
     "base-64": "^1.0.0",
     "btoa": "^1.2.1",
     "emoji-picker-react": "^3.5.1",
+    "formik": "^2.2.9",
+    "framer-motion": "^7.4.0",
     "howler": "^2.2.3",
     "js-base64": "^3.7.2",
     "jwt-decode": "^3.1.2",
@@ -47,6 +49,7 @@
     "socket.io-client": "^4.5.1",
     "styled-components": "^5.3.5",
     "uuid": "^8.3.2",
+    "uuidv4": "^6.2.13",
     "web-vitals": "^2.1.4",
     "yup": "^0.32.11"
   },

@@ -88,7 +88,6 @@ const Navbar1=({notification,ReportNotification})=>{
     return(
         <div className="navbarnotifcation">
 
-            <img src={`${mydata.image}`} alt="" style={{cursor:"pointer"}} onClick={show_personalinformation_logout}/>
             <NotificationsActiveIcon className="icon" onClick={notification_Display} datatype="frend" />
             {FrendNotification!==undefined?<p className="frendnotification">{FrendNotification.length>0?FrendNotification.length:<></>}</p>:<></>}
 
@@ -108,6 +107,8 @@ const Navbar1=({notification,ReportNotification})=>{
 
 
             {show_hide_information_logout===true? <Main_bar_personal_information_logout/>:<></>}
+
+            <img src={`${mydata.image}`} alt="" style={{cursor:"pointer"}} onClick={show_personalinformation_logout}/>
            
 
         </div>

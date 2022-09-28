@@ -1,43 +1,28 @@
 //Import React And Main Combonants
 import React, { useState }  from "react"
-import { useForm } from "react-hook-form";
-import {useDispatch,useSelector} from "react-redux"
-
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router";
+import { Formik, Form, Field } from 'formik';
+import * as Yup from 'yup';
 //The Decoded File
 import axios from 'axios';
-import jwt_decode from "jwt-decode";
+import jwt_decode from "jwt-decode";
 
 //Style Section The Css file And Class Have Style
-import "../signin-style/signin-style.css"
-import classes from "../../signup/style-signup/materialui-signup";
-
-//import file section 
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-
-//yup section 
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from "yup";
-import { useNavigate } from "react-router";
-
-//Use For Validation Section 
-const schema = yup.object({
-    email: yup.string().email().required(),
-    password: yup.string().required(),
-  }).required();
-
-
-
+import "../signin-style/signin-style.css";
+import logo from "../../../assest/allin-logo.png";
   
-  
-  
-
 const SignIn=()=>{
-    const dispatch=useDispatch()
-    const Navi=useNavigate()
-
-    const [wrongEmailOrPass,setwrongEmailOrPass]=useState()
+    const Navi=useNavigate();
+    const [wrongEmailOrPass,setwrongEmailOrPass]=useState(false)
     const [verificationProblem,setVerificationProblem]=useState(false)
+
+    const initialValues={
+        email: '',
+        password:'',
+    }
+    
+    
 
 
     const verifyEmail=()=>{    
@@ -48,11 +33,8 @@ const SignIn=()=>{
         Navi("/Verification")
     }
 
-    //Use For React Former For Validation The Information
-    const { register, handleSubmit, formState:{ errors } } = useForm({resolver: yupResolver(schema)});
 
-
-    const Onsubmit = (data) =>{
+    const Get_AllData = (data) =>{
 
         //Use To Decoded The Baseic Auth To Be `BASIC 5464d5s45d454s55dsdsadsa` And Send In Header
         const decoded=btoa(`${data.email}:${data.password}`)
@@ -69,15 +51,12 @@ const SignIn=()=>{
                     //send the accsess Token To User To Useit
                     const decoded = jwt_decode(x.data.accessToken);
                     window.localStorage.mydata=JSON.stringify(decoded);
-                    window.localStorage.accessToken=JSON.stringify(x.data.accessToken);
-                    window.localStorage.refreshToken=JSON.stringify(x.data.refreshToken);
                     window.location.href="/home";
                 }                
 
             }).catch((errors)=>{
                 //if The Email Or The Password ARE WRONG
-                console.log(errors)
-                setwrongEmailOrPass(errors.response.data)
+                setwrongEmailOrPass("Wrong Email Or Password")
             });
     
     }
@@ -86,30 +65,41 @@ const SignIn=()=>{
     const signup=()=>{ Navi("/signup")}
     
     return(
-        <>
-            <div className="signin-container-section">
-                        <form onSubmit={handleSubmit(Onsubmit)} className="signup-option">
+        <div className="signin-all">
+        <motion.div className="container-all" initial={{opacity:0}} animate={{opacity:1}}>
+            <div class="center-signin-section">
+                <motion.img src={logo} alt="" className="image-forSignin"   initial={{opacity:0}} animate={{opacity:1}}     transition={{ duration: 1 }}/>
 
-                                <TextField id="outlined-uncontrolled"  label="Email" defaultValue="example@yahoo.com" {...register("email")} sx={classes.signinstyle}   />
-                                <p className="error">{errors.email?.message}</p>
+                        <Formik
+                            initialValues={initialValues}
+                            validationSchema={SignupSchema}
+                            onSubmit={Get_AllData}
+                            >
+                            {({ errors, touched }) => (
+                                <Form method="post">
+                                        <div class="txt_field">
+                                            <Field type="text" required name="email" />
+                                                <span></span>
+                                            {errors.email && touched.email ? <div className='error-section'>{errors.email}</div> : null}
+                                            <label>Username</label>
+                                        </div>
+                                        <div class="txt_field">
+                                            <Field type="password"  name="password"  required />
+                                                <span></span>
+                                            {errors.password && touched.password ? <div className='error-section'>{errors.password}</div> : null}
+                                            <label>Password</label>
+                                        </div>
+                                            <motion.input type="submit" value="Login"  whileHover={{scale:1.1 ,    transition: { duration: 1 ,yoyo:Infinity},}}  />
+                                        <div class="singup_link">Not a member? <a style={{cursor:"pointer"}}  onClick={signup}>Singup</a></div>
+                                </Form>
+                        )}
+                        </Formik>   
 
-                                <TextField id="outlined-uncontrolled"  label="Password"  {...register("password")} sx={classes.signinstyle} type="password"  />
-                                <p className="error">{errors.password?.message}</p>
-                                {verificationProblem!==false?<Button variant="outlined" color="error" sx={{marginBottom:"15px"}} onClick={verifyEmail}> Press Here To Verify</Button>:<></>}
-                                <Button variant="contained" type="submit"  sx={classes.signinstyle}>Submit All</Button>
-                                <Button variant="contained"  sx={classes.greenbutton} onClick={signup}>signup</Button>
-                                {wrongEmailOrPass==="Error Email Or Password"?<p className="WrongEmailOrPass">{wrongEmailOrPass}</p>:<></>}
-
-                        </form>
-
-                <div className="image-holder">
-                    <img src="https://www.lotempiolaw.com/wp-content/uploads/2018/08/Facebook-PNG-Clipart.png" alt="" />
-                    <p>sign on in the face back and go to live check all massage and other vaideios posters</p>
+                        { verificationProblem!==false? <motion.p   onClick={verifyEmail} initial={{scale:1}} animate={{scale:1.2}} transition={{duration:1,yoyo:Infinity}} className="verification" >Press here To Verification...</motion.p>:<></>}    
+                        { wrongEmailOrPass!==false? <motion.p   initial={{scale:1}} animate={{scale:1.2}} transition={{duration:1,yoyo:Infinity}} className="verification" >{wrongEmailOrPass}</motion.p>:<></>}              
                 </div>
-
-
+            </motion.div>
             </div>
-        </>
     )
 
 }
@@ -122,15 +112,17 @@ export default SignIn
 
 
 
+//you schema style validation 
+const SignupSchema = Yup.object().shape({
+    email:Yup
+      .string()      
+      .email("Invalid email format")
+      .required("Mail is required"),
+    password: Yup.string()
+       .label('Password')
+       .min(2)
+       .max(10)
+       .required(),
+     });
+  
 
-//  //get refresh token and get barear
-//  axios.post("http://localhost:3050/apiv1",{
-//     headers:{ 'Content-Type': 'application/json' ,'Accept': 'application/json',"authorization":`Bearer ${x.data.accessToken}` },
-//     data}).then((data)=>{
-//         var decoded = jwt_decode(data.data.refreshtoken);
-//         window.localStorage.mydata=JSON.stringify(decoded)
-//         window.location.href="/home";
-
-//     }).catch(()=>{
-//         console.log("wrong ")
-//     })0

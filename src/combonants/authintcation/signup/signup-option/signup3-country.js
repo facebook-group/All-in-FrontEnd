@@ -14,12 +14,12 @@ const SignupCountry=(prototype)=>{
             <Autocomplete
             onChange={getcountry}
                 id="country-select-demo"
-                sx={classes.textfiled}
+                sx={{width:"100%",marginBottom:"15px"}}
                 options={countries}
                 autoHighlight
                 getOptionLabel={(option) => option.label}
                 renderOption={(props, option) => (
-                    <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
+                    <Box component="li" {...props}>
                     <img
                         loading="lazy"
                         width="20"

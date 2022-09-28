@@ -34,6 +34,7 @@ import { store } from "./redux/store/store";
 import { Provider } from 'react-redux'
 import Verification from "./combonants/verification-page/verification";
 import VedioCallPage from "./combonants/vedio-call-page/vedio-call-page";
+import Page_Not_Found from "./combonants/page-not-found/Page_Not_Found";
 
 
 const App=()=>{
@@ -52,10 +53,9 @@ const App=()=>{
                           <Route path="/editeInformation" element={<><Navbar /> <Edite_personal_information/></>}/>
                           <Route path="/Verification" element={<Verification/>}/>
                           <Route path="/vediocallpage" element={<VedioCallPage/>}/>
-
+                          <Route path="*" element={<Page_Not_Found/>}/>
               </Routes>
             </BrowserRouter>
-
       </Provider>
     </>
   )

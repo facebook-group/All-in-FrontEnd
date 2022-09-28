@@ -1,12 +1,23 @@
+:root{
+    --background-color:#B1B2FF;
+    --color:#EEF1FF; 
+    --hover:#D2DAFF;
+    --button:#4976dd;
+    --other:rgb(31, 31, 94);
+ }
+
 .navbarcontainer {
-    display: flex;justify-content: space-between;padding: 5px;
-    box-shadow: 2px 2px silver;position: fixed;top: 0;left: 0;
-    width: 100vw;background-color: white;z-index: 1200;
+    display: flex;justify-content: space-between; padding: 0px 30px;
+    box-shadow: 2px 2px var(--other);position: fixed;top: 0;left: 0;
+    width: 100vw;background-color: white;z-index: 1200; height: 8vh;
+}
+.navbarcontainer img {
+    width: 100px; height: 40px; cursor: pointer;
 }
 
 /* /////////////////////////////////////////////Navbar 1 ////////////////////////////////////////////// */
 .navbarcontainer .navbarnotifcation img{
-width: 50px;height: 50px;border-radius: 50%;
+width: 40px;height: 40px;border-radius: 50%;
 }
 .signup-option .imageshow {
 width: 200px; height: 200px;position: absolute;
@@ -15,17 +26,18 @@ border-radius: 30px;
 }
 .navbarcontainer .navbarnotifcation {
     display: flex;align-items: center;justify-content: space-between;
-    width: 160px;
+    width: 160px; 
 }
 .navbarcontainer .navbarnotifcation  .icon {
-    color: rgb(112, 112, 112);
+    color: var(--other); transition: all .5s;
 }
 .navbarcontainer .navbarnotifcation  .icon.active {
     color: red;
 }
 .navbarcontainer .navbarnotifcation  .icon:hover{
-    color: rgb(68, 68, 255);
+    color:var(--button);
     transition: all .1s;cursor: pointer;
+    transform: scale(1.1);
 
 }
 
@@ -38,28 +50,6 @@ border-radius: 30px;
 .navbarcontainer .selectdataneed {
     display: flex;width: 450px;
 }
-.navbarcontainer .selectdataneed li {
-    padding: 10px 25px;font-size: 1.5em;
-}
-.navbarcontainer .selectdataneed li:hover{
-    color: rgb(68, 68, 255);
-    transition: all .1s;cursor: pointer;
-}
-
-
-/* ////////////////////////////////////////////  Search seaction ////////////////////////////////////////// */
-.navbarcontainer .searchnavbar {
-    display: flex;align-items: center;margin-right: 15px;
-    z-index: 1200;
-}
-.navbarcontainer .searchnavbar img {
-    width: 30px;
-}
-.navbarcontainer .search {
-    border-radius: 20px;background-color: rgba(68, 68, 255, 0.096);border: 2px solid rgba(192, 192, 192, 0);
-    height: 30px;margin-right: 3px;width: 200px;padding: 15px;cursor: pointer;
-}
-
 
 
 
