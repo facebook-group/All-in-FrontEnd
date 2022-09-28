@@ -1,82 +1,29 @@
-span{
-   color: #000000;
+:root{
+  --background-color:#B1B2FF;
+  --color:#EEF1FF; 
+  --hover:#D2DAFF;
+  --button:#4976dd;
+  --other:rgb(31, 31, 94);
 }
 
-.myPage{
-   margin-left: 5rem;
-   margin-top: 2rem;
+.information-bar {
+  position: fixed; left: 0; top: 50%; transform: translateY(-50%);
+  
 }
+.information-bar span {
+  background-color:var(--hover); z-index: 10000000; padding: 5px;
+  border-radius: 10px;
 
-.myName{
-   color: #EEF1FF;
 }
+.information-bar li {
+  font-weight: bold; text-transform: capitalize; padding: 5px;
+  display: flex; align-items: center; cursor: pointer;color: var(--button);
 
-.btn-12{
-  margin-top: 0.5rem;
-  position: relative;
-  right: 20px;
-  bottom: 20px;
-  border:none;
-  box-shadow: none;
-  height: 40px;
-  line-height: 42px;
-  -webkit-perspective: 230px;
-  perspective: 230px;
 }
-.btn-12 span {
-  background: #AAC4FF;
-background: linear-gradient(0deg, #AAC4FF 0%, #AAC4FF 100%);
-  display: block;
-  position: absolute;
-  width: 130px;
-  height: 40px;
-  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-   7px 7px 20px 0px rgba(0,0,0,.1),
-   4px 4px 5px 0px rgba(0,0,0,.1);
-  border-radius: 5px;
-  margin-left:5rem;
-  text-align: center;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+.information-bar li p {
+  font-size: 1em; margin-left: 5px; margin-top: 2px; transition: all .5s;
+  opacity: 0;
 }
-.btn-12 span:nth-child(1) {
-  box-shadow:
-   -7px -7px 20px 0px #fff9,
-   -4px -4px 5px 0px #fff9,
-   7px 7px 20px 0px #0002,
-   4px 4px 5px 0px #0001;
-  -webkit-transform: rotateX(90deg);
-  -moz-transform: rotateX(90deg);
-  transform: rotateX(90deg);
-  -webkit-transform-origin: 50% 50% -20px;
-  -moz-transform-origin: 50% 50% -20px;
-  transform-origin: 50% 50% -20px;
-}
-.btn-12 span:nth-child(2) {
-  -webkit-transform: rotateX(0deg);
-  -moz-transform: rotateX(0deg);
-  transform: rotateX(0deg);
-  -webkit-transform-origin: 50% 50% -20px;
-  -moz-transform-origin: 50% 50% -20px;
-  transform-origin: 50% 50% -20px;
-}
-.btn-12:hover span:nth-child(1) {
-  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-   7px 7px 20px 0px rgba(0,0,0,.1),
-   4px 4px 5px 0px rgba(0,0,0,.1);
-  -webkit-transform: rotateX(0deg);
-  -moz-transform: rotateX(0deg);
-  transform: rotateX(0deg);
-}
-.btn-12:hover span:nth-child(2) {
-  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-   7px 7px 20px 0px rgba(0,0,0,.1),
-   4px 4px 5px 0px rgba(0,0,0,.1);
- color: transparent;
-  -webkit-transform: rotateX(-90deg);
-  -moz-transform: rotateX(-90deg);
-  transform: rotateX(-90deg);
+.information-bar li:hover  p  {
+  opacity: 1;
 }

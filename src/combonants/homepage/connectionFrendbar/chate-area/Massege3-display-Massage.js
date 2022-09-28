@@ -23,20 +23,24 @@ const Massrg_section3=({allmassage})=>{
                     if(mydata.regusterid==frindid){
                         return (                  
                                 <div className="sender" key={i}>
-                                    <p className="time-section"><Moment fromNow>{createdAt}</Moment></p>
                                         <div className="text">
-                                            <img src={image} alt="" style={style.image_profole} />
-                                            <p className="massenger-text">{text}</p>
+                                            <img src={image} alt="" style={{width:"30px",height:"30px",borderRadius:"50px",marginRight:"5px"}} />
+                                            <div className="text-container">
+                                                <p className="massenger-text">{text}</p>
+                                                <p className="time-section"><Moment fromNow>{createdAt}</Moment></p>
+                                            </div>
                                         </div>
                                         <p ref={lastthing}></p>
                                 </div>)
                     }else{
                         return (                  
                             <div className="sender forme" key={i}>
-                                <p className="time-section"><Moment fromNow>{createdAt}</Moment></p>
                                     <div className="text">
-                                        <p className="massenger-text">{text}</p>
-                                        <img src={image} alt="" style={style.image_profole} />
+                                        <div className="text-container">
+                                            <p className="massenger-text" style={{display:"flex",justifyContent:"flex-end"}}>{text}</p>
+                                            <p className="time-section"  style={{display:"flex",justifyContent:"flex-end"}}><Moment fromNow>{createdAt}</Moment></p>
+                                        </div>
+                                        <img src={image} alt="" style={{width:"30px",height:"30px",borderRadius:"50px",marginLeft:"5px"}} />
                                     </div>
                                     <p ref={lastthing}></p>
                             </div>)

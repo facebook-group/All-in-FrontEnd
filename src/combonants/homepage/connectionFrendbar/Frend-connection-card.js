@@ -1,5 +1,4 @@
 import React,{useEffect, useState} from "react"
-
 import {useDispatch,useSelector} from "react-redux"
 import { GetAllUserData } from "../../../redux/GetAllInfromationUser";
 
@@ -85,14 +84,14 @@ const Frend_Connection_Card=({onlinefrind})=>{
                 //check if the online user is one from the
                 if(onlinefrind.includes(myfrindid)){
                     return( <div className="person" data={`${chatId},${fullName},${image},${myfrindid},${frindid}`} onClick={massenger} key={i} >
-                                <p>{fullName}</p>
                                 <img src={image} alt="" style={style.image_profole} />
+                                <p>{fullName}</p>
                                 <p className="active" ></p>
                             </div>)
                 }else{
                     return( <div className="person" data={`${chatId},${fullName},${image},${myfrindid},${frindid}`} onClick={massenger} key={i}>
-                                <p>{fullName}</p>
                                 <img src={image} alt="" style={style.image_profole} />
+                                <p>{fullName}</p>
                                 <p className="notactive"></p>
                             </div>)
                 }

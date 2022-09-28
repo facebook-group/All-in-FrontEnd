@@ -15,7 +15,7 @@ import Card_Comment_Section from "./comment-section/card3-comment-section";
 
 const Card_Post=({postdata})=>{
     return(
-        <Card sx={{backgroundColor:"white" ,marginBottom:"10px"}}>
+        <Card sx={{backgroundColor:"#D2DAFF" ,marginBottom:"10px"}}>
           <Card_Person_information postdata={postdata}/>
             <Card_image_post  postdata={postdata}/>
               <Card_icon_post  postdata={postdata}/>

@@ -8,8 +8,8 @@
 
 .navbarcontainer {
     display: flex;justify-content: space-between; padding: 0px 30px;
-    box-shadow: 2px 2px var(--other);position: fixed;top: 0;left: 0;
-    width: 100vw;background-color: white;z-index: 1200; height: 8vh;
+    box-shadow: 2px 2px var(--hover);position: fixed;top: 0;left: 0;
+    width: 100vw;background-color: var(--hover);z-index: 1200; height: 8vh;
 }
 .navbarcontainer img {
     width: 100px; height: 40px; cursor: pointer;
@@ -29,13 +29,13 @@ border-radius: 30px;
     width: 160px; 
 }
 .navbarcontainer .navbarnotifcation  .icon {
-    color: var(--other); transition: all .5s;
+    color:var(--button); transition: all .5s;
 }
 .navbarcontainer .navbarnotifcation  .icon.active {
     color: red;
 }
 .navbarcontainer .navbarnotifcation  .icon:hover{
-    color:var(--button);
+    color:var(--hover);
     transition: all .1s;cursor: pointer;
     transform: scale(1.1);
 
@@ -131,38 +131,19 @@ border-radius: 30px;
 
 
 /* //-------------------------------------personal-informatio-logout----------------------------------// */
-
 .personal-informatio-logout {
-  position: absolute;top: 67px;left: 15px;
-  background-color: white;padding: 20px;
-  width: 300px;border-radius: 20px;color: rgb(66, 64, 64);
-  font-weight: bold;
+    position: absolute; right: 20px; top: 54px; background-color: var(--hover);
+    padding: 10px; border-radius: 5px;
 }
-.personal-information {
-   box-shadow: 1px 1px 1px 1px silver;padding: 10px;border-radius: 20px;
+.icon1-personal-container li {
+    text-align: center; font-weight: bold; text-transform: capitalize; color: var(--button);
+    padding: 5px; border: 1px  solid var(--hover); cursor: pointer; display: flex;width: 200px;
+    border: 1px solid var(--background-color); margin-bottom: 5px;
+    justify-content: center;
 }
-.personal-information .icon1 {
-    display: flex;align-items: center;
-    border-bottom:1px solid silver;padding: 10px;
+.icon1-personal-container li:hover{
+    transition: all .5s; background-color: var(--color);
 }
-.personal-information .show-persnal {
-    padding-top: 10px;text-transform: capitalize;font-weight: bold;
-    cursor: pointer;    color: rgba(58, 58, 240, 0.664);
-}
-.personal-information .show-persnal:hover {
-    color: silver;transition: all .5s;
-}
-.other-selection-bar .icon-other-selectiopn li {
-    display: flex; padding: 8px;align-items: center;cursor: pointer;
-}
-.other-selection-bar .icon-other-selectiopn li:hover {
-    color: rgba(58, 58, 240, 0.664);transition: all .5s;
-}
-.other-selection-bar .icon-other-selectiopn li p {
-margin-top: 10px;margin-left: 5px;
-}
-
-
 
 /* //-------------------------------------report post -----------------------------------------------// */
 .icon-holder-report {

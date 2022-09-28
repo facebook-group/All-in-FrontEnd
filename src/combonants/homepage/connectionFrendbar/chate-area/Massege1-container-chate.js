@@ -37,15 +37,14 @@ const Masseges_section=({massanger,statemassenger,chate_status_open_or_close})=>
 
             <div className="massanger">
                 <div className="header-massanger">
-                    <ul className="icon-section">
-                        <li onClick={closse_massenger}><CloseIcon/></li>
-                        <li><Vedio_Call massanger={massanger}/></li>
-                        <li><CallIcon/></li>
-                    </ul>
                     <div className="name-section">
-                        <p>{massanger.fullName}</p>
-                        <img src={massanger.image} alt="" style={style.image_profole} />
+                        <img src={massanger.image} alt="" style={{width:"30px",height:"30px",borderRadius:"50%"}} />
+                        <p style={{marginBottom:"5px",marginLeft:"5px"}}>{massanger.fullName}</p>
                     </div>
+                    <ul className="icon-section">
+                        <li><Vedio_Call massanger={massanger}/></li>
+                        <li onClick={closse_massenger}><CloseIcon style={{color:"red"}}/></li>
+                    </ul>
 
                 </div>
 

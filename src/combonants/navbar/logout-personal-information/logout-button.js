@@ -20,8 +20,8 @@ const Logout_button=()=>{
     }
     return(
         <li onClick={logout}>
-            <LogoutIcon/>
             <p>sign out</p>
+            <span>  <LogoutIcon/></span>
         </li>
     )
 }

@@ -45,7 +45,7 @@ const App=()=>{
               <Routes>
                 <Route path="/signup" element={<SignUp/>}/>
                 <Route path="/" element={<SignIn />} />
-                    <Route path="home"  element={<>  <Navbar/>  <HomePage/>  <Vedio_call_main/> </>} />
+                    <Route path="/home"  element={<>  <Navbar/>  <HomePage/>  <Vedio_call_main/> </>} />
                           <Route path="/frind"  element={<>  <Navbar  /> <FrendNavbar/> <AllFrind/>   <Vedio_call_main/> </>} />
                           <Route path="/frendrequest"    element={<>  <Navbar  /> <FrendNavbar/> <FrendRequest/>  <Vedio_call_main/></>}/>
                           <Route path="/myfrend"    element={<> <Navbar  /> <FrendNavbar/> <MyFrend/>  <Vedio_call_main/></>}/>
