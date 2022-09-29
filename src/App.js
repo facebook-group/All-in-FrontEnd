@@ -24,8 +24,15 @@ import Vedio_call_main from "./combonants/vedio_call/vedio_call_main";
 //other 
 import Personal_page_information from "./combonants/personal-page-information/main-personal-page";
 import Edite_personal_information from "./combonants/personal-page-information/edite-personal-information/edite-personal-information";
+import Movies from './combonants/movies/App'
 
 
+import Homes from './combonants/movies/pages/Home';
+import Catalog from './combonants/movies/pages/Catalog';
+import Detail from './combonants/movies/pages/detail/Detail';
+import Movieheader from './combonants/movies/components/header/Header'
+import MovieGrid from './combonants/movies/components/movie-grid/MovieGrid'
+import Movefooter from './combonants/movies/components/footer/Footer'
 
 //store using like collecter f the all information 
 import { store } from "./redux/store/store";
@@ -34,7 +41,7 @@ import { Provider } from 'react-redux'
 import Verification from "./combonants/verification-page/verification";
 import VedioCallPage from "./combonants/vedio-call-page/vedio-call-page";
 import Page_Not_Found from "./combonants/page-not-found/Page_Not_Found";
-
+import Routers from './combonants/movies/config/Routes'
 
 const App=()=>{
   return(
@@ -52,10 +59,17 @@ const App=()=>{
                           <Route path="/editeInformation" element={<><Navbar /> <Edite_personal_information/></>}/>
                           <Route path="/Verification" element={<Verification/>}/>
                           <Route path="/vediocallpage" element={<VedioCallPage/>}/>
+                          <Route path="/movies" element={<> <Navbar/>  <Homes/>   </>}/>      
+                          <Route path="/movies/:category/search/:keyword" element={<> <Navbar/>  <Catalog/>   </>}/>
+                          <Route path="/movies/:category/:id" element={<> <Navbar/> <Movieheader/> <Detail/>   </>}/>  
+                          <Route path="/movie" element={<> <Navbar/> <MovieGrid/>   </>}/>
                           <Route path="*" element={<Page_Not_Found/>}/>
+                         
               </Routes>
             </BrowserRouter>
+          
       </Provider>
+    
     </>
   )
 }

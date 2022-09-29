@@ -46,8 +46,8 @@ const Information_bar=()=>{
           <span><AccountCircleIcon style={{fontSize:"1.7em"}}/> </span>
           <p>Personal Account</p>
         </li>
-        <li>
-          <span><MovieIcon style={{fontSize:"1.7em"}}/> </span>
+        <li datatype="/movies" >
+          <span><MovieIcon style={{fontSize:"1.7em"}} /> </span>
           <p>Movei</p>
         </li>
       </ul>
