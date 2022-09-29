@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import Card_Post from "./card/card"
-import "../style/homepage.css"
-import axios from "axios"
+import "../style/homepage.scss"
 
 //soket io section
 import io from "socket.io-client"

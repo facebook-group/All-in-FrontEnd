@@ -1,6 +1,8 @@
 import React, { useState,useEffect } from "react"
 import BookmarkIcon from '@mui/icons-material/Bookmark';
-import io from "socket.io-client"
+import io from "socket.io-client";
+
+import "./style/style.scss"
 
 import {useSelector} from "react-redux"
 const socket=io(process.env.REACT_APP_API)
@@ -43,9 +45,7 @@ const Report_post_notification=({ReportNotification})=>{
                     <img src={publisherImage} alt="" />
                     <div className="text-report">
                         <p className="name-s">{publisherName}</p>
-                        <p>You Have Report On Post With 
-                           the Number Report On post {report}
-                        </p>
+                        <p className="report">You Have Report On Post   {report}</p>
                     </div>
                 </div>
             </div>

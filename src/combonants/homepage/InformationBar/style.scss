@@ -1,0 +1,33 @@
+@use "../../main-style/style.scss";
+
+
+.information-bar {
+  position: fixed; left: 0; top: 50%; transform: translateY(-50%);
+
+  span {
+    background-color:style.$hover; z-index: 10000000; padding: 5px;
+    border-radius: 10px;
+  
+  }
+
+  li {
+    font-weight: bold; text-transform: capitalize; padding: 5px;
+    display: flex; align-items: center; cursor: pointer;color:style.$button;
+      p {
+        font-size: 1em; margin-left: 5px; margin-top: 2px; transition: all .5s;
+        opacity: 0;
+      }
+
+    &:hover p{
+      opacity: 1;
+    }
+  }
+  
+}
+
+
+@media screen and (max-width:1000px) {
+  .information-bar{
+    display: none;
+  }
+}

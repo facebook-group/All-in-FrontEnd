@@ -6,7 +6,7 @@ import {motion} from "framer-motion"
 
 
 
-import "../style/navbar.css"
+import "../style/navbar.scss"
 //soket io section
 import io from "socket.io-client"
 const socket=io(process.env.REACT_APP_API)

@@ -7,6 +7,7 @@ import Connection_Frind from "./connectionFrendbar/connection-frend"
 
 //soket io section
 import io from "socket.io-client"
+import Movei_file from "./movei-bar/Movei_file"
 const socket=io(process.env.REACT_APP_API)
 
 let mydata
@@ -38,6 +39,7 @@ const HomePage=()=>{
             <Main_Poste/>
             <Information_bar />
             <Connection_Frind onlinefrind={onlinefrind}/>
+            <Movei_file/>
         </div>
     )
 }

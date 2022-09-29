@@ -1,0 +1,24 @@
+
+@use "../../../main-style/style.scss";
+
+.movei-container-section {
+    position: fixed; right: 40px;top: 70px; 
+    width: 150px;
+    .movei-container {
+        position: relative; margin-bottom: 7px; cursor: pointer;
+        p { 
+            position: absolute; bottom: 15px; left: 30px; color: style.$button;
+            font-weight: bold; font-size: 1.2em;
+        }
+    }
+    img {
+         width: 130px; height: 130px; border-radius:20%;
+    }
+}
+
+
+@media screen  and (max-width:1200px) {
+    .movei-container-section {
+        display: none;
+    }
+}

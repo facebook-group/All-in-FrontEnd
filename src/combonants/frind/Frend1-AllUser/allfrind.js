@@ -1,7 +1,7 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
 //style import 
-import "../Frend4-Styleeeeeeeeeee/frind.css"
+import "../Frend4-Styleeeeeeeeeee/frind.scss"
 
 import {useDispatch} from "react-redux"
 import { GetAllUserData } from "../../../redux/GetAllInfromationUser"

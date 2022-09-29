@@ -22,7 +22,8 @@ const CreatePostModel=({show,mydata})=>{
     }
 
 
-    const publish=async()=>{
+    const publish=async(e)=>{
+        e.preventDefault();
         //all data will create the post
         const text=text_value
         const postId=uuidv4(); // ⇨ '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
@@ -53,11 +54,10 @@ const CreatePostModel=({show,mydata})=>{
             <div className="interior">
             <h1>Create Post</h1>
                <Modal_Header_Section mydata={mydata}/>
-                   <Modal_Text_Icon text_value_get={text_value_get} ImagePoster={ImagePoster}/>                
-                <Button variant="contained" disableElevation sx={{width:"100%"}} onClick={publish}>
-                publish
-                </Button>
-
+                   <Modal_Text_Icon text_value_get={text_value_get} ImagePoster={ImagePoster}/> 
+                   <button  onClick={publish} className="publish-button">
+                    publish
+                   </button>               
                 <p className="close-button" onClick={showmodel}><CloseIcon/></p>
 
             </div>

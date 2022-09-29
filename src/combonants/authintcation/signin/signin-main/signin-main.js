@@ -9,7 +9,7 @@ import axios from 'axios';
 import jwt_decode from "jwt-decode";
 
 //Style Section The Css file And Class Have Style
-import "../signin-style/signin-style.css";
+import "../signin-style/signin-style.scss";
 import logo from "../../../assest/allin-logo.png";
   
 const SignIn=()=>{

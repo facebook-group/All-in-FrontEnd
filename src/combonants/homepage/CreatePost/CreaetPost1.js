@@ -6,8 +6,10 @@ import CreatePost_section1 from "./CreatePost-section1"
 import CreatePost_section2 from "./CreatePost-section2"
 
 //style
-import "../style/homepage.css"
-import CreatePostModel from "./modal-post-create/CreaetPost2-Model"
+import "./style/style.scss"
+import CreatePostModel from "./modal-post-create/CreaetPost2-Model";
+
+
 //import my information 
 let mydata
 if(window.localStorage.mydata){

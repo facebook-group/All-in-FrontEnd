@@ -16,7 +16,7 @@ import { v4 as uuidv4 } from 'uuid';
 //import file section 
 import SignupCountry from "./signup3-country";
 import SignupPhoto from "./signup-photo";
-import "../style-signup/signup.css"
+import "../style-signup/signup.scss"
 
 
 const  SignUp1=()=> {

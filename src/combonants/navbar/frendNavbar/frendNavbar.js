@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 
 
 
-import "../style/navbar.css"
+import "../style/navbar.scss"
 import { useNavigate } from "react-router";
 
 

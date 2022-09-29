@@ -1,9 +1,4 @@
 import React from "react"
-import SearchIcon from '@mui/icons-material/Search';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-
-
-//the combonanats will using
 import Frend_Connection_Card from "./Frend-connection-card";
 
 

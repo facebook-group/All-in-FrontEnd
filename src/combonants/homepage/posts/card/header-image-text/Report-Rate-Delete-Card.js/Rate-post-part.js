@@ -5,7 +5,6 @@ import axios from "axios"
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
-import Typography from '@mui/material/Typography';
 import { useDispatch } from "react-redux";
 import { GetAllPostes } from "../../../../../../redux/get-all-postes";
 
@@ -28,28 +27,13 @@ const Rate_Post_Section=({doReport,mydata,postdata})=>{
     
     return(
         <>
-            {mydata.role=='editor'?
-                        <Box
-                        sx={{
-                            '& > legend': { mt: 2 },
-                            marginLeft:"auto",
-                            marginRight:"auto",
-                            width:"150px",
-                            textAlign:"center"
-        
-                        }}
-                        >
-                        <Typography component="legend" sx={{fontWeight:"bold"}}>Rate The Post</Typography>
-                        <Rating
-                            name="simple-controlled"
-                            value={value}
-                            onChange={(event, newValue) => {
-                            setValue(newValue);
-                            }}
-                        />
-                        <Button variant="text" onClick={newrate}>Submit Rate</Button>
-
-                    </Box>:<></>
+            {mydata.role=='editor'?  
+                <Box>
+                    <p>Rate The Post</p>
+                    <Rating value={value}  onChange={(event, newValue) => { setValue(newValue);}}/>
+                    <Button variant="text" onClick={newrate} >Submit Rate</Button>
+                </Box>
+                :<></>
             }
 
         </>

@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import {useSelector,useDispatch} from "react-redux"
 import { GetAllUserData } from "../../../redux/GetAllInfromationUser"
 //style import 
-import "../Frend4-Styleeeeeeeeeee/frind.css"
+import "../Frend4-Styleeeeeeeeeee/frind.scss"
 import MyCard from "../CARD"
 
 

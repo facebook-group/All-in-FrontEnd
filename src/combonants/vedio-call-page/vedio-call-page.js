@@ -8,7 +8,7 @@ import VideocamOffIcon from '@mui/icons-material/VideocamOff';
 import CallEndIcon from '@mui/icons-material/CallEnd';
 import VolumeDownIcon from '@mui/icons-material/VolumeDown';
 import VideoCameraBackIcon from '@mui/icons-material/VideoCameraBack';
-import "./style/style.css"
+import "./style/style.scss"
 import io from "socket.io-client"
 const socket=io(process.env.REACT_APP_API)
 

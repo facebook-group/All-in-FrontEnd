@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router";
-import "./varefication.css";
+import "./varefication.scss";
 
 import {motion} from "framer-motion"
 

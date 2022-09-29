@@ -7,7 +7,7 @@ const Modal_Text_Icon=({text_value_get,ImagePoster})=>{
     const [text_value,set_text_valiue]=useState("")
 
     const dataType=(e)=>{
-        e.key=="Backspace"?set_text_valiue(text_value.slice(0,text_value.length-1)):set_text_valiue(text_value+e.key)
+        set_text_valiue(e.target.value)
     }
 
     //callback to send the text to perant
@@ -26,15 +26,14 @@ const Modal_Text_Icon=({text_value_get,ImagePoster})=>{
     return(
         <>
         <p className="text-area">{text_value} </p>
-            <input type="text" className="post-section" placeholder="What You Think About?"  onKeyDown={dataType}/>
+            <input type="text" className="post-section" placeholder="What You Think About?"  onChange={dataType}/>
 
-            <div className="icon">
+            <div className="icon-section-item">
                 <div>
                 <Image_Frend_Icon ImagePoster={ImagePoster}/>
                 <Emoji_Addres_section emoje_add={emoje_add}/>
                 </div>
                 <p>Add To Your Post</p>
-
             </div>
         </>
     )

@@ -8,7 +8,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import MovieIcon from '@mui/icons-material/Movie';
 import GroupIcon from '@mui/icons-material/Group';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
-import './style.css';
+import './style.scss';
 import { useEffect } from "react";
 
 

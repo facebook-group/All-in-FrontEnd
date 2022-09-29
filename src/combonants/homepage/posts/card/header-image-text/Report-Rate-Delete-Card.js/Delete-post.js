@@ -23,13 +23,10 @@ const Delete_Post_Part=({doReport,postdata,mydata})=>{
     return(
         <>
                 {mydata.role=="admin"||mydata.regusterid==postdata.personDoPostId?
-                    <li onClick={deletepost}>
-                        <div>
-                            <h1>Delete Post</h1>
-                            <p>Remove this post from my content </p>
-                        </div>
-                         <LayersClearIcon sx={{marginTop:"7px",fontSize:"1.8em"}}/>
-                    </li>:<></>
+                    <div onClick={deletepost} className="container-specific">
+                        <p> Delete Post</p>
+                        <span><LayersClearIcon /></span>
+                    </div>:<></>
                 }
 
         </>

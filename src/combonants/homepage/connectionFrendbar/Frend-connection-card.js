@@ -5,6 +5,8 @@ import { GetAllUserData } from "../../../redux/GetAllInfromationUser";
 
 import style from "../../style_combonants/Style-combonants";
 
+import "./style/style.scss"
+
 //import combonants
 import Masseges_section from "./chate-area/Massege1-container-chate"
 

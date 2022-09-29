@@ -1,15 +1,12 @@
-:root{
-    --background-color:#B1B2FF;
-    --color:#EEF1FF; 
-    --hover:#D2DAFF;
-    --button:#4976dd;
-    --other:rgb(31, 31, 94);
- }
+
+ @use "../../main-style/style.scss";
+
+
 
 .navbarcontainer {
     display: flex;justify-content: space-between; padding: 0px 30px;
-    box-shadow: 2px 2px var(--hover);position: fixed;top: 0;left: 0;
-    width: 100vw;background-color: var(--hover);z-index: 1200; height: 8vh;
+    box-shadow: 2px 2px style.$hover;position: fixed;top: 0;left: 0;
+    width: 100vw;background-color: style.$hover;z-index: 1200; height: 8vh;
 }
 .navbarcontainer img {
     width: 100px; height: 40px; cursor: pointer;
@@ -29,13 +26,13 @@ border-radius: 30px;
     width: 160px; 
 }
 .navbarcontainer .navbarnotifcation  .icon {
-    color:var(--button); transition: all .5s;
+    color:style.$button; transition: all .5s;
 }
 .navbarcontainer .navbarnotifcation  .icon.active {
     color: red;
 }
 .navbarcontainer .navbarnotifcation  .icon:hover{
-    color:var(--hover);
+    color:style.$hover;
     transition: all .1s;cursor: pointer;
     transform: scale(1.1);
 
@@ -132,42 +129,19 @@ border-radius: 30px;
 
 /* //-------------------------------------personal-informatio-logout----------------------------------// */
 .personal-informatio-logout {
-    position: absolute; right: 20px; top: 54px; background-color: var(--hover);
+    position: absolute; right: 20px; top: 54px; background-color: style.$hover;
     padding: 10px; border-radius: 5px;
 }
 .icon1-personal-container li {
-    text-align: center; font-weight: bold; text-transform: capitalize; color: var(--button);
-    padding: 5px; border: 1px  solid var(--hover); cursor: pointer; display: flex;width: 200px;
-    border: 1px solid var(--background-color); margin-bottom: 5px;
+    text-align: center; font-weight: bold; text-transform: capitalize; color:style.$button;
+    padding: 5px; border: 1px  solid style.$hover; cursor: pointer; display: flex;width: 200px;
+    border: 1px solid style.$background-color ;margin-bottom: 5px;
     justify-content: center;
 }
 .icon1-personal-container li:hover{
-    transition: all .5s; background-color: var(--color);
+    transition: all .5s; background-color:style.$color;
 }
 
-/* //-------------------------------------report post -----------------------------------------------// */
-.icon-holder-report {
-    position: relative;
-}
-.report-icon-notificatiton {
-    background-color: red;color: white;width: 17px;height: 17px;border-radius: 50%;
-    position: absolute;top: 0;left: 15px;text-align: center;display: flex;align-items: center;
-    justify-content: center;font-size: 1.2em;padding: 2px;
-}
-.icon-holder-report .card-report {
-    position: absolute;left: 0px;top: 50px;text-transform: capitalize;
-    background-color: rgba(192, 192, 192, 0.918);width: 250px;
-    border-radius: 10px;padding: 5px;padding: 10px;
-}
-.icon-holder-report .element-report {
-    display: flex;align-items: center;justify-content: start;
-}
-.icon-holder-report .element-report .text-report {
-    margin-left: 10px;margin-top: 10px;
-}
-.icon-holder-report .element-report .name-s{
-    font-weight: bold;
-}
 
 
 
@@ -196,6 +170,6 @@ border-radius: 30px;
 }
 .pointer-role {
     position: absolute;left: 155px;
-    background-color: red;color: white;border-radius: 50%;
+    background-color: red;color: style.$color;border-radius: 50%;
     width: 20px;height: 20px;display: flex;align-items: center;justify-content: center;
 }

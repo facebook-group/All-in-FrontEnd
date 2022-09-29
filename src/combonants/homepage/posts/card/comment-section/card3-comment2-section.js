@@ -10,11 +10,13 @@ const Card_Comment=({postdata})=>{
     return(
         <>
             <div className="comment-container-card-post">
-                <img src={commenterImage} alt="" style={style.image_profole} />
+                <img src={commenterImage} alt="" />
                     <div className="text-container">
                         <p className="name">{commenterName}</p>
-                                <p className="poster-comment-text">{text}</p>
-                        <Moment fromNow className="time">{createdAt}</Moment>
+                        <p className="poster-comment-text">{text}</p>
+                        <p className="time">
+                            <Moment fromNow >{createdAt}</Moment>
+                        </p>
                     </div>
                         
             </div>            

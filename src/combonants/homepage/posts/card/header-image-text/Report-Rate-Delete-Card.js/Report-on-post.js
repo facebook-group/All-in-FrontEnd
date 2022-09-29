@@ -22,13 +22,12 @@ const Report_On_Post=({postdata,doReport})=>{
     
     return(
         <>
-                <li onClick={repostPost}>
-                    <div>
-                        <h1>Report a post</h1>
-                        <p>This post violates some rights </p>
-                    </div>
-                    <SummarizeIcon sx={{marginTop:"7px",fontSize:"1.8em"}}/>
-                </li>
+                <div onClick={repostPost} className="container-specific">
+                    <p>Report a post</p>
+                    <span>
+                        <SummarizeIcon />
+                    </span>
+                </div>
         </>
     )
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 
-import "../style/vediocall.css"
+import "../style/vediocall.scss"
 import style from "../../style_combonants/Style-combonants"
 import Button from '@mui/material/Button';
 
