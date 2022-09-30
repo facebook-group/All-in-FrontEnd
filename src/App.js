@@ -2,6 +2,13 @@ import React from "react";
 import {BrowserRouter,Route,Routes} from "react-router-dom"
 
 
+///movie
+
+ import Homes from './combonants/movies/pages/Home';
+ import Catalog from './combonants/movies/pages/Catalog';
+import Detail from './combonants/movies/pages/detail/Detail';
+ import MovieGrid from './combonants/movies/components/movie-grid/MovieGrid'
+ import Movies from './combonants/movies/movie'
 
 //Authntication Import Combonants
 import SignUp from "./combonants/authintcation/signup/sign1-main";
@@ -52,7 +59,11 @@ const App=()=>{
                               <Route path="/editeInformation" element={<><Navbar /> <Edite_personal_information/></>}/>
                               <Route path="/Verification" element={<Verification/>}/>
                               <Route path="/vediocallpage" element={<VedioCallPage/>}/>
-                              <Route path="*" element={<Page_Not_Found/>}/>
+                              <Route path="/movies" element={<> <Navbar/>  <Homes/>   </>}/>      
+                          <Route path="/movies/:category/search/:keyword" element={<> <Navbar/>  <Catalog/>   </>}/>
+                          <Route path="/movies/:category/:id" element={<> <Navbar/> <Detail/>   </>}/>  
+                          <Route path="/movie" element={<> <Navbar/> <MovieGrid/>   </>}/>
+                          <Route path="*" element={<Page_Not_Found/>}/>
                   </Routes>
                 </BrowserRouter>
           </Provider>
