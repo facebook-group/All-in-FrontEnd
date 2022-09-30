@@ -37,7 +37,7 @@ const Navbar2=()=>{
             <BottomNavigationAction
             style={{color:"#4976dd"}}
                 label="Store"
-                value="/store"
+                value="/movies"
                 icon={<Shop2Icon />}
             />
             <BottomNavigationAction

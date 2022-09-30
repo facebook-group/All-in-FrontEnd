@@ -10,14 +10,24 @@ import GroupIcon from '@mui/icons-material/Group';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import './style.scss';
 import { useEffect } from "react";
+import { useContext } from "react";
+import { ShowBar_Create_Context } from "../../context-api/show-information-bar";
 
 
 
 const Information_bar=()=>{
     const Navi=useNavigate();
+    const showIn_formation_Context=useContext(ShowBar_Create_Context)
+
+
+
     const Gotopage=(e)=>{
       Navi(e.currentTarget.getAttribute("datatype"))
     }
+
+    useEffect(()=>{
+      document.querySelector(".information-bar").classList.toggle("active-element")
+    },[showIn_formation_Context])
 
 
     useEffect(()=>{

@@ -190,3 +190,20 @@ border-radius: 30px;
     background-color: red;color: style.$color;border-radius: 50%;
     width: 20px;height: 20px;display: flex;align-items: center;justify-content: center;
 }
+
+
+
+
+
+.navbar-section-bar-item {
+cursor: pointer;  display: none; margin-top: 8px;
+}
+.logo {
+    display: flex; align-items: center;
+}
+
+@media screen and (max-width :1000px) {
+    .navbar-section-bar-item{
+        display: block;
+    }
+}

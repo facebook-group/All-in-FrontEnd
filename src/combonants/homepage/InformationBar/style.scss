@@ -30,4 +30,16 @@
   .information-bar{
     display: none;
   }
+  .information-bar.active-element {
+    display: block; background-color: style.$background-color; z-index: 10000000000000;
+    width: 100%; position: absolute; left: 0; top: 80px;
+    display: flex; justify-content: center;
+    span {
+      padding: 15px;
+    }
+    p{
+      display: none;
+    }
+  }
+  
 }
