@@ -160,9 +160,9 @@ border-radius: 30px;
 
 
 .Admin-role-requrst {
-    position: absolute;top: 70px;left: 120px;
-    background-color: white;padding: 10px;border-radius: 20px;
-    max-height: 400px;overflow-y: auto;
+    position: absolute;top: 50px;left: -150px;
+    background-color: style.$hover;padding: 10px;border-radius: 5px;
+    max-height: 400px;overflow-y: auto; width: 200px;
     
 }
 .Admin-role-requrst .information-section {
@@ -182,8 +182,11 @@ border-radius: 30px;
     width: 45%;height: 30px;
     
 }
+.Admin-role-requrst .container {
+    border: 1px solid style.$background-color; padding: 5px;
+}
 .pointer-role {
-    position: absolute;left: 155px;
+    position: absolute;right: -10px;top: -12px;
     background-color: red;color: style.$color;border-radius: 50%;
     width: 20px;height: 20px;display: flex;align-items: center;justify-content: center;
 }

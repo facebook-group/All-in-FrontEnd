@@ -60,10 +60,10 @@ const App=()=>{
                               <Route path="/Verification" element={<Verification/>}/>
                               <Route path="/vediocallpage" element={<VedioCallPage/>}/>
                               <Route path="/movies" element={<> <Navbar/>  <Homes/>   </>}/>      
-                          <Route path="/movies/:category/search/:keyword" element={<> <Navbar/>  <Catalog/>   </>}/>
-                          <Route path="/movies/:category/:id" element={<> <Navbar/> <Detail/>   </>}/>  
-                          <Route path="/movie" element={<> <Navbar/> <MovieGrid/>   </>}/>
-                          <Route path="*" element={<Page_Not_Found/>}/>
+                              <Route path="/movies/:category/search/:keyword" element={<> <Navbar/>  <Catalog/>   </>}/>
+                              <Route path="/movies/:category/:id" element={<> <Navbar/> <Detail/>   </>}/>  
+                              <Route path="/movie" element={<> <Navbar/> <MovieGrid/>   </>}/>
+                              <Route path="*" element={<Page_Not_Found/>}/>
                   </Routes>
                 </BrowserRouter>
           </Provider>

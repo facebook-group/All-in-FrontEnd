@@ -1,9 +1,11 @@
-$body-bg: #0f0f0f;
-$main-color: #ff0000;
-$txt-color: #fff;
+@use "../../main-style/style.scss";
 
-$white: #fff;
-$black: #000;
+$body-bg: style.$background-color;
+$main-color: #ff0000;
+$txt-color: style.$button;
+
+$white:style.$hover;
+$black: style.$hover;
 
 $box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 

@@ -97,9 +97,11 @@ const Navbar1=({notification,ReportNotification})=>{
             {mydata.role!=='admin'? <Report_post_notification ReportNotification={ReportNotification}/>:<></>}
 
 
-            {mydata.role=='admin'?<EngineeringIcon onClick={showAdminRequest} sx={{cursor:"pointer"}}/>:<></>}
-            {Show_Hide_Role_damin==true &&Role_Request_Data!==false?<Role_update_request MyRole_admin_date={Role_Request_Data} FilterRole={FilterRole}/>:<></>}
-            {mydata.role=='admin'&&Role_Request_Data!==false&&Role_Request_Data.length!==0?<p className="pointer-role">{Role_Request_Data.length}</p>:<></>}            
+            <div style={{position:"relative"}}>
+                {mydata.role=='admin'?<EngineeringIcon onClick={showAdminRequest} sx={{cursor:"pointer"}}/>:<></>}
+                {Show_Hide_Role_damin==true &&Role_Request_Data!==false?<Role_update_request MyRole_admin_date={Role_Request_Data} FilterRole={FilterRole}/>:<></>}
+                {mydata.role=='admin'&&Role_Request_Data!==false&&Role_Request_Data.length!==0?<p className="pointer-role">{Role_Request_Data.length}</p>:<></>}            
+            </div>
 
             {displaybar=="frend"?   
                  <div className="navbar1allcontainer">

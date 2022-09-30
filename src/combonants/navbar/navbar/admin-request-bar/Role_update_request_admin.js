@@ -16,6 +16,8 @@ const Role_update_request=({MyRole_admin_date,FilterRole})=>{
         let regusterid=(e.currentTarget.getAttribute("datatype")).split(",")[0]
         let role=(e.currentTarget.getAttribute("datatype")).split(",")[1]
 
+
+        console.log(MyRole_admin_date)
         //use to filter the data after accept or reject
         let FiltertedData=MyRole_admin_date.filter((a)=>(a.regusterid!==regusterid))
         FilterRole(FiltertedData)
