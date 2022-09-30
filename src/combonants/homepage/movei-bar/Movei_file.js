@@ -1,22 +1,42 @@
+import axios from 'axios';
 import React from 'react';
+import { useContext } from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { SelectPage_Create_Context } from '../../context-api/select-page';
 import "./style/style.scss"
 
 
-let data=[{img:"https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg",name:"lith"},
-{img:"https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg",name:"lith"},
-{img:"https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg",name:"lith"},
-{img:"https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg",name:"lith"},
-{img:"https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg",name:"lith"}]
-
 
 function Movei_file() {
+
+  const [Datause,setDatause]=useState(false);
+  const selectPage_context=useContext(SelectPage_Create_Context);
+
+
+  const getdata=(e)=>{
+    const [adult,poster_path,original_title,id,original_language,overview,popularity,release_date,vote_average,vote_count]=e.currentTarget.getAttribute("datatype").split("$$$")
+    selectPage_context.setselectPage({adult:adult,poster_path:poster_path,
+      original_title:original_title,id:id,original_language:original_language,
+      overview:overview,popularity:popularity,release_date:release_date,
+      vote_average:vote_average,vote_count:vote_count})
+  }
+
+  useEffect(()=>{
+    axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API2}&language=en-US&page=1`).then((data)=>{
+      setDatause(data.data.results)
+    })
+  },[])
+
+
   return (
     <div className='movei-container-section'>
-        {data.map((a,i)=>(
-                    <div className='movei-container' key={i}>
-                        <img src={a.img} alt="" />
+        { Datause!==false? Datause.map(({adult,poster_path,original_title,id,original_language,overview,popularity,release_date,vote_average,vote_count},i)=>(
+                    <div className='movei-container'  onClick={getdata}  key={i} datatype={`${adult}$$$${poster_path}$$$${original_title}$$$${id}$$$${original_language}$$$${overview}$$$${popularity}$$$${release_date}$$$${vote_average}$$$${vote_count}`}>
+                        <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt="" />
+                        <p>{original_title}</p>
                     </div>        
-               ))
+               )):<></>
         }
     </div>
   )

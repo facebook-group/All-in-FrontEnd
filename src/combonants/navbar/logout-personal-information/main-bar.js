@@ -7,11 +7,6 @@ import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import Logout_button from "./logout-button";
 
 
-let mydata
-if(window.localStorage.mydata){
-    mydata=JSON.parse(window.localStorage.mydata)
-}
-
 
 const Main_bar_personal_information_logout=()=>{
     const Navi=useNavigate()

@@ -21,7 +21,7 @@ const Report_post_notification=({ReportNotification})=>{
         //add soket io notification
         if(ReportNotification!==undefined){All_Report_Post.push(ReportNotification)}
 
-        let MyAllReport=allpost.getallpostes.value.payload.data.forEach((data)=>{
+        allpost.getallpostes.value.payload.data.forEach((data)=>{
             if(data.report!==0){
                 All_Report_Post.push(data)
             }

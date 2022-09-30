@@ -23,7 +23,7 @@ const FrendNavbar=()=>{
       
     return(
         <div className="frendnavbar">
-            <Box sx={styleNavBarFrend}>
+            <Box >
             <Tabs
                 value={changestate}
                 onChange={handleChange}
