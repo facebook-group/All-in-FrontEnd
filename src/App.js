@@ -24,7 +24,7 @@ import Vedio_call_main from "./combonants/vedio_call/vedio_call_main";
 //other 
 import Personal_page_information from "./combonants/personal-page-information/main-personal-page";
 import Edite_personal_information from "./combonants/personal-page-information/edite-personal-information/edite-personal-information";
-import Movies from './combonants/movies/App'
+import Movies from './combonants/movies/movie'
 
 
 import Homes from './combonants/movies/pages/Home';
