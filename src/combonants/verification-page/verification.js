@@ -52,7 +52,7 @@ const Verification=()=>{
                   </form>                
               </div>
         </motion.div>
-        {wrongverecation==true? <p className="wrong">Wrong Varification</p>:<></> }
+        {wrongverecation==true? <p className="wrong-varification">Wrong Varification</p>:<></> }
         </>
     )
 }

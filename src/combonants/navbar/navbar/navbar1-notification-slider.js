@@ -28,20 +28,18 @@ const NavBar1Card=({data})=>{
 
     return(
         <>
-        <div className="navbar1card" onClick={check_notification} typenotification={TypeNotification} idnotification={id}>
-            <div className="container">
-            <img src={image} alt="" />
-                <div>
-                    <p>{fullName}</p>
-                    <p className="type-notification">{TypeNotification}</p>
+            <div className="navbar1card" onClick={check_notification} typenotification={TypeNotification} idnotification={id}>
+                <div className="container">
+                <img src={image} alt="" />
+                    <div className="text-section">
+                        <p className="fullname">{fullName}</p>
+                        <p className="type-notification">{TypeNotification}</p>
+                        <p className="timecontainer">
+                            <Moment fromNow date={createdAt} />
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div className="timecontainer">
-              <Moment className="time" fromNow date={createdAt} />
-            </div>
-
-        </div>
-        
         </>
     )
 }

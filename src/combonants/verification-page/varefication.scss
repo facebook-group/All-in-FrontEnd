@@ -7,7 +7,7 @@
 }
 .verification-inner {
     width: 400px; position: absolute; left: 50%; top: 40%; transform: translate(-50%,-50%);
-    background-color:style.$color; padding: 30px; border-radius: 10px;
+    background-color:style.$color; padding: 30px; border-radius: 10px; padding-bottom: 55px;
 
 }
 .varefication-container h3 {
@@ -47,4 +47,9 @@
 .varefication-container .holder-input {
     margin-left: auto; margin-right: auto;
     display: flex; align-items: center; justify-content: space-around;
+}
+
+.wrong-varification  {
+    position: absolute;left: 50%; bottom: 155px; transform: translateX(-50%);
+    font-weight: bold; color: red;
 }

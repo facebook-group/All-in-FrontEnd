@@ -87,9 +87,10 @@ const Navbar1=({notification,ReportNotification})=>{
 
     return(
         <div className="navbarnotifcation">
-
-            <NotificationsActiveIcon className="icon" onClick={notification_Display} datatype="frend" />
-            {FrendNotification!==undefined?<p className="frendnotification">{FrendNotification.length>0?FrendNotification.length:<></>}</p>:<></>}
+            <div style={{position:"relative"}}>
+                <NotificationsActiveIcon className="icon" onClick={notification_Display} datatype="frend" />
+                {FrendNotification!==undefined?<p className="frendnotification">{FrendNotification.length>0?FrendNotification.length:<></>}</p>:<></>}
+            </div>
 
 
             <AttachEmailIcon className="icon" onClick={notification_Display} datatype="massage" />
