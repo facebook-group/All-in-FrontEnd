@@ -59,9 +59,9 @@ const VedioCallPage=()=>{
 
 
         //when you have acall mack thise step 
-        peer.on('call', (call) => {
-          navigator.getUserMedia({ video: true,audio:true }, (mediaStream) => {
-            console.log(mediaStream)
+        peer.on('call', async(call) => {
+          await navigator.getUserMedia({ video: true,audio:false }, async(mediaStream) => {
+
             currentUserVideoRef.current.srcObject = mediaStream;
             currentUserVideoRef.current.play();
             call.answer(mediaStream)
@@ -92,9 +92,8 @@ const VedioCallPage=()=>{
 
 
       useEffect(()=>{
-        socket.on("get-peerid-accepter",(data)=>{
-              navigator.getUserMedia({ video: true,audio:true }, (mediaStream) => {
-                console.log(mediaStream)
+        socket.on("get-peerid-accepter",async(data)=>{
+            await navigator.getUserMedia({ video: true,audio:false }, async(mediaStream) => {
                 currentUserVideoRef.current.srcObject = mediaStream;
                 currentUserVideoRef.current.play();
       
@@ -105,8 +104,7 @@ const VedioCallPage=()=>{
                   remoteVideoRef.current.play();
                 });
               });
-            })
-            
+            }) 
       },[socket])
 
 
