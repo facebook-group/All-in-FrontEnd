@@ -31,6 +31,8 @@ import Vedio_call_main from "./combonants/vedio_call/vedio_call_main";
 //other 
 import Personal_page_information from "./combonants/personal-page-information/main-personal-page";
 import Edite_personal_information from "./combonants/personal-page-information/edite-personal-information/edite-personal-information";
+// about
+import About from "./combonants/about/about";
 
 //store using like collecter f the all information 
 import { store } from "./redux/store/store";
@@ -65,6 +67,7 @@ const App=()=>{
                                       <Route path="/movies/:category/search/:keyword" element={<> <Navbar/>  <Catalog/>   </>}/>
                                       <Route path="/movies/:category/:id" element={<> <Navbar/> <Detail/>   </>}/>  
                                       <Route path="/movie" element={<> <Navbar/> <MovieGrid/>   </>}/>
+                                      <Route path="/about" element={<> <Navbar/> <About/>   </>}/>
                                       <Route path="*" element={<Page_Not_Found/>}/>
                           </Routes>
                         </BrowserRouter>
