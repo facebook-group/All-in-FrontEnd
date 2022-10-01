@@ -12,7 +12,7 @@ const showmodel=()=>{
         <>
             <div className="imagecontainer" onClick={showmodel}>
                 <img src={mydata.image} alt="" />
-                <input type="text" placeholder={`What You Think About ${mydata.fullName}`} />
+                <input type="text" style={{fontWeight:"bold"}}  placeholder={`What You Think About ${mydata.fullName}`} />
             </div>
         </>
     )

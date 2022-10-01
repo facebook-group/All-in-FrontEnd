@@ -31,7 +31,7 @@ body {
   .button-section {
     margin-left: auto; margin-right: auto; display: block; margin-top: 20px;
     padding: 10px; background-color: style.$button; border: 1px solid style.$button;
-    color: style.$color; border-radius: 5px; font-weight: bold; cursor: pointer;
+    color: style.$hover; border-radius: 5px; font-weight: bold; cursor: pointer;
   }
 
 
