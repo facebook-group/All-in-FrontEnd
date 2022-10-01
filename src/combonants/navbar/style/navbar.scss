@@ -53,6 +53,15 @@ border-radius: 30px;
     display: flex;width: 450px;
 }
 
+.navbarcontainer .selectdataneed .selectItemBackground {
+background-color: style.$hover;
+}
+
+.navbarcontainer .selectdataneed .selectItemBackground .button-color-section
+{
+    color:style.$button;
+}
+
 
 
 /* /////////////////////////////////////////////Navbar 1 Card////////////////////////////////////////// */

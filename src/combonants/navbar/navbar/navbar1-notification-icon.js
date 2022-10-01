@@ -98,7 +98,7 @@ const Navbar1=({notification,ReportNotification})=>{
 
 
             <div style={{position:"relative"}}>
-                {mydata.role=='admin'?<EngineeringIcon onClick={showAdminRequest} sx={{cursor:"pointer"}}/>:<></>}
+                {mydata.role=='admin'?<span className="icon"   sx={{cursor:"pointer"}}><EngineeringIcon onClick={showAdminRequest} /></span>:<></>}
                 {Show_Hide_Role_damin==true &&Role_Request_Data!==false?<Role_update_request MyRole_admin_date={Role_Request_Data} FilterRole={FilterRole}/>:<></>}
                 {mydata.role=='admin'&&Role_Request_Data!==false&&Role_Request_Data.length!==0?<p className="pointer-role">{Role_Request_Data.length}</p>:<></>}            
             </div>

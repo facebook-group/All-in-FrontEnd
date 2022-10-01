@@ -86,12 +86,12 @@
 
 /* //--------------------------------------------------massenger ------------------------------------------// */
 .massanger {
-    width: 250px;background-color: style.$color;font-weight: bold;
+    width: 250px;background-color: style.$hover;font-weight: bold;
     position: absolute; left: 250px;top: 100px; height: 60vh;
 }
 .massanger .header-massanger {
     display: flex;justify-content: space-between;
-    background-color:style.$hover;
+    background-color:style.$color;
 }
 .massanger .header-massanger .name-section {
     display: flex;align-items: center; padding: 5px;
