@@ -24,7 +24,6 @@ if(window.localStorage.AccepterInformation){
     accepter=JSON.parse(window.localStorage.AccepterInformation)
 }
 
-let counter=1;
 const VedioCallPage=()=>{
     //get the peer id to mack the connection section 
     const [peerId, setPeerId] = useState('');
@@ -33,6 +32,7 @@ const VedioCallPage=()=>{
     const remoteVideoRef = useRef(null);
     const currentUserVideoRef = useRef(null);
     const peerInstance = useRef(null);
+
 
 
     const [mutedVoise,setMutedVois]=useState(true);
@@ -45,16 +45,15 @@ const VedioCallPage=()=>{
     
 
 
-    let flasher= setTimeout(()=>{
-      mutevedio===true?setmutevedio(false):setmutevedio(true)
-      counter++;
 
-    },[3000])
 
-    if(counter===3){
-      clearTimeout(flasher)
-    }
-
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        mutevedio===true?setmutevedio(false):setmutevedio(true)
+      }, 6000);
+      return () => clearTimeout(timer);
+    }, []);
+    
 
 
 
