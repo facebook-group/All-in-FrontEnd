@@ -42,9 +42,12 @@ const VedioCallPage=()=>{
 
     const audioMuted=()=>{mutedVoise===true?setMutedVois(false):setMutedVois(true)};
     const vedioMuted=()=>{mutevedio===true?setmutevedio(false):setmutevedio(true)};
-
-
     
+
+
+    setTimeout(()=>{
+      mutevedio===true?setmutevedio(false):setmutevedio(true)
+    },[4000])
 
 
 

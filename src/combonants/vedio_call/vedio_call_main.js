@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 
+import audioTone from "../assest/ringtone.mp4"
+
 
 
 //soket io section
@@ -17,7 +19,9 @@ if(window.localStorage.mydata){
 
 
 const Vedio_call_main=()=>{
-        const Navi=useNavigate()
+        const Navi=useNavigate();
+        let audio = new Audio(audioTone);
+
 
         //-------------------------------------vedio call notification --------------------------------------//
         const[notification_vedio_call,setnotification_vedio_call]=useState(false)//get notification from another clinet
@@ -37,8 +41,9 @@ const Vedio_call_main=()=>{
             setnotification_vedio_call(request_vedio_vall)
             set_notification_close(true)//open the notification card
 
+            //play audio
+            audio.play();
 
-            
             })
     
         },[socket])
@@ -50,14 +55,17 @@ const Vedio_call_main=()=>{
           const get_status=(data)=>{
             //close the notification 
             set_notification_close(false)
-
+            //close audio
             //save the information of answer in local storage
             window.localStorage.AccepterInformation=JSON.stringify(data)
             window.localStorage.removeItem("CallerInformation")
             //if press accept go to page vedio call 
             if(data.type=="Accept"){
-              Navi('/vediocallpage')
+              Navi('/vediocallpage')  
             }
+            audio.muted();
+
+
           }
     
 
