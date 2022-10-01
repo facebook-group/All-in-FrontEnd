@@ -31,7 +31,7 @@ const Detail = () => {
                 item && (
                     <>
                         {/* <div className="banner" style={{backgroundImage: `url(${apiConfig.originalImage(item.backdrop_path || item.poster_path)})`}}></div> */}
-                        <div className="mb-3 movie-content container">
+                        <div className="mb-3 movie-content container" style={{padding:"50px 100px"}}>
                             <div className="movie-content__poster">
                                 <div className="movie-content__poster__img" style={{backgroundImage: `url(${apiConfig.originalImage(item.poster_path || item.backdrop_path)})`}}></div>
                             </div>
@@ -59,7 +59,7 @@ const Detail = () => {
                             <div className="section mb-3">
                                 <VideoList id={item.id}/>
                             </div>
-                            <div className="section mb-3">
+                            <div className="section mb-3" style={{padding:"5px 100px"}}>
                                 <div className="section__header mb-2">
                                     <h2>Similar</h2>
                                 </div>

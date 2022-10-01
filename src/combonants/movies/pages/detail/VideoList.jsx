@@ -41,7 +41,7 @@ const Video = props => {
     }, []);
 
     return (
-        <div className="video">
+        <div className="video" style={{padding:"5px 100px"}}>
             <div className="video__title">
                 <h2>{item.name}</h2>
             </div>
