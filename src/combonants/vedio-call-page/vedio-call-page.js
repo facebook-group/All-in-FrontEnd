@@ -24,7 +24,7 @@ if(window.localStorage.AccepterInformation){
     accepter=JSON.parse(window.localStorage.AccepterInformation)
 }
 
-
+let counter=1;
 const VedioCallPage=()=>{
     //get the peer id to mack the connection section 
     const [peerId, setPeerId] = useState('');
@@ -45,9 +45,16 @@ const VedioCallPage=()=>{
     
 
 
-    setTimeout(()=>{
+    let flasher= setTimeout(()=>{
       mutevedio===true?setmutevedio(false):setmutevedio(true)
-    },[4000])
+      counter++;
+
+    },[3000])
+
+    if(counter===3){
+      clearTimeout(flasher)
+    }
+
 
 
 
