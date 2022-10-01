@@ -47,7 +47,7 @@ function About() {
                 position = 'lastSlide'
               }
               return (
-                <article key={id} className={position}>
+                <article key={id} className={position} style={{marginTop:"10px"}}>
                   <img src={image} alt={name} className='person-img' />
                   <h4 style={{ marginBottom: '1rem', color: 'black' }}>{name}</h4>
                   <a href={github}>
@@ -56,19 +56,22 @@ function About() {
                   </a>
                   <p
                     className='text'
-                    style={{ color: 'black' }}
+                    style={{ color: 'black',fontWeight:"bold",fontSize:"1.5em" }}
                   >
                     {desc}
                   </p>
-                  <FaQuoteRight className='icon' />
                 </article>
               )
             })}
             <button className='prev' onClick={() => setIndex(index - 1)}>
-              <FiChevronLeft />
+              <span className='icon-custom'>
+                  <FiChevronLeft />
+              </span>
             </button>
             <button className='next' onClick={() => setIndex(index + 1)}>
-              <FiChevronRight />
+              <span className='icon-custom'>
+                <FiChevronRight />
+              </span>
             </button>
           </div>
         </section>
@@ -194,7 +197,11 @@ p {
   }
 }
 /*  global classes */
-
+.icon-custom{
+  padding: 10px; background-color: silver;
+  border-radius: 5px; display: flex; align-items: center; justify-content: center;
+  font-size: 2em;
+}
 /* section */
 .section {
   width: 90vw;
@@ -244,8 +251,8 @@ Slider
 .person-img {
   border-radius: 50%;
   margin-bottom: 1rem;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border: 4px solid var(--clr-grey-8);
   box-shadow: var(--dark-shadow);
@@ -306,7 +313,7 @@ article h4 {
 }
 @media (min-width: 800px) {
   .text {
-    max-width: 45em;
+    max-width: 45em; color: silver;
   }
   .prev,
   .next {
