@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import SubjectIcon from '@mui/icons-material/Subject';
 import "./style/style.scss";
 import Moment from 'react-moment';
@@ -18,6 +18,7 @@ function Header_card({postdata}) {
   const showTheItem=()=>{
     showItem==false?setshowItem(true):setshowItem(false)
   }
+
 
 
   return (
