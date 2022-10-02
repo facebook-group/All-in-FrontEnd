@@ -28,16 +28,22 @@ function Movei_file() {
     })
   },[])
 
+  console.log(Datause)
+
 
   return (
     <div className='movei-container-section'>
-        {/* { Datause!==false? Datause.map(({adult,poster_path,original_title,id,original_language,overview,popularity,release_date,vote_average,vote_count},i)=>(
+        { Datause!==false? Datause.map(({adult,poster_path,original_title,id,original_language,overview,popularity,release_date,vote_average,vote_count},i)=>(
                     <div className='movei-container'  onClick={getdata}  key={i} datatype={`${adult}$$$${poster_path}$$$${original_title}$$$${id}$$$${original_language}$$$${overview}$$$${popularity}$$$${release_date}$$$${vote_average}$$$${vote_count}`}>
-                        <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt="" />
-                        <p>{original_title}</p>
+                          <div className='text-information-movei'>
+                              <p>{original_title}</p>
+                              <p>{release_date}</p>
+                              <p>vote_average {vote_average}</p>
+                          </div>
+                          <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt="" />
                     </div>        
                )):<></>
-        } */}
+        }
     </div>
   )
 }
