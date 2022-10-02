@@ -1,6 +1,8 @@
+import axios from "axios";
 import React, { useEffect } from "react"
-import { useDispatch,useSelector } from "react-redux"
-import { GetAllUserData } from "../../redux/GetAllInfromationUser"
+import { useState } from "react";
+import { useContext } from "react";
+import { RegusterId_Create_Context } from "../context-api/personal-page";
 import HerderPersonal_page_information from "./personal-page/header-personal-page";
 
 
@@ -13,17 +15,22 @@ if(window.localStorage.mydata){
 }
 
 const Personal_page_information=()=>{
-    const dispatch=useDispatch()
-    const personal_data=useSelector((state)=>(state.alluserdata.value))
+
+    const MainPageContext=useContext(RegusterId_Create_Context)
+    const [DataUse,setDataUse]=useState(false)
+
+
     useEffect(()=>{
-        dispatch(GetAllUserData())
-    },[dispatch])
+         axios.get(`${process.env.REACT_APP_API}user/${MainPageContext.RegusterId}`).then((data)=>{
+            setDataUse(data.data[0])
+         })
+    },[])
     
 
 
     return(
         <div className="main-page-holder">
-          {personal_data!==false?<HerderPersonal_page_information personal_data={personal_data.payload.data[0]}/>:<></>}
+          {DataUse!==false?<HerderPersonal_page_information personal_data={DataUse}/>:<></>}
           <ul className="element1">
           </ul>
         </div>

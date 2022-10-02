@@ -45,38 +45,41 @@ import Page_Not_Found from "./combonants/page-not-found/Page_Not_Found";
 import { SelectPage_DataProvider } from "./combonants/context-api/select-page";
 import { ShwoBar_DataProvider } from "./combonants/context-api/show-information-bar";
 import { Vediocall_DataProvider } from "./combonants/context-api/vedio-call";
+import { RegusterId_DataProvider } from "./combonants/context-api/personal-page";
 
 const App=()=>{
   return(
     <>
-    <Vediocall_DataProvider>
-            <ShwoBar_DataProvider>
-                <SelectPage_DataProvider>
-                      <Provider store={store}>
-                            <BrowserRouter>
-                              <Routes>
-                                <Route path="/signup" element={<SignUp/>}/>
-                                <Route path="/" element={<SignIn />} />
-                                    <Route path="/home"  element={<>  <Navbar/>  <HomePage/>  <Vedio_call_main/> </>} />
-                                          <Route path="/frind"  element={<>  <Navbar  /> <FrendNavbar/> <AllFrind/>   <Vedio_call_main/> </>} />
-                                          <Route path="/frendrequest"    element={<>  <Navbar  /> <FrendNavbar/> <FrendRequest/>  <Vedio_call_main/></>}/>
-                                          <Route path="/myfrend"    element={<> <Navbar  /> <FrendNavbar/> <MyFrend/>  <Vedio_call_main/></>}/>
-                                          <Route path="/personalPage" element={<><Navbar  /> <Personal_page_information/> </> }/>
-                                          <Route path="/editeInformation" element={<><Navbar /> <Edite_personal_information/></>}/>
-                                          <Route path="/Verification" element={<Verification/>}/>
-                                          <Route path="/vediocallpage" element={<VedioCallPage/>}/>
-                                          <Route path="/movies" element={<> <Navbar/>  <Homes/>   </>}/>      
-                                          <Route path="/movies/:category/search/:keyword" element={<> <Navbar/>  <Catalog/>   </>}/>
-                                          <Route path="/movies/:category/:id" element={<> <Navbar/> <Detail/>   </>}/>  
-                                          <Route path="/movie" element={<> <Navbar/> <MovieGrid/>   </>}/>
-                                          <Route path="/about" element={<> <Navbar/> <About/>   </>}/>
-                                          <Route path="*" element={<Page_Not_Found/>}/>
-                              </Routes>
-                            </BrowserRouter>
-                      </Provider>
-                  </SelectPage_DataProvider>
-              </ShwoBar_DataProvider>
-          </Vediocall_DataProvider>
+      <RegusterId_DataProvider>
+            <Vediocall_DataProvider>
+                    <ShwoBar_DataProvider>
+                        <SelectPage_DataProvider>
+                              <Provider store={store}>
+                                    <BrowserRouter>
+                                        <Routes>
+                                          <Route path="/signup" element={<SignUp/>}/>
+                                            <Route path="/" element={<SignIn />} />
+                                                <Route path="/home"  element={<>  <Navbar/>  <HomePage/>  <Vedio_call_main/> </>} />
+                                                      <Route path="/frind"  element={<>  <Navbar  /> <FrendNavbar/> <AllFrind/>   <Vedio_call_main/> </>} />
+                                                        <Route path="/frendrequest"    element={<>  <Navbar  /> <FrendNavbar/> <FrendRequest/>  <Vedio_call_main/></>}/>
+                                                          <Route path="/myfrend"    element={<> <Navbar  /> <FrendNavbar/> <MyFrend/>  <Vedio_call_main/></>}/>
+                                                            <Route path="/personalPage" element={<><Navbar  /> <Personal_page_information/> </> }/>
+                                                              <Route path="/editeInformation" element={<><Navbar /> <Edite_personal_information/></>}/>
+                                                                <Route path="/Verification" element={<Verification/>}/>
+                                                                  <Route path="/vediocallpage" element={<VedioCallPage/>}/>
+                                                                <Route path="/movies" element={<> <Navbar/>  <Homes/>   </>}/>      
+                                                              <Route path="/movies/:category/search/:keyword" element={<> <Navbar/>  <Catalog/>   </>}/>
+                                                            <Route path="/movies/:category/:id" element={<> <Navbar/> <Detail/>   </>}/>  
+                                                          <Route path="/movie" element={<> <Navbar/> <MovieGrid/>   </>}/>
+                                                        <Route path="/about" element={<> <Navbar/> <About/>   </>}/>
+                                                <Route path="*" element={<Page_Not_Found/>}/>
+                                          </Routes>
+                                    </BrowserRouter>
+                              </Provider>
+                          </SelectPage_DataProvider>
+                      </ShwoBar_DataProvider>
+                  </Vediocall_DataProvider>
+              </RegusterId_DataProvider>
       </>
   )
 }

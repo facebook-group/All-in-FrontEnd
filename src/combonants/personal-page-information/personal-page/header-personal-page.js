@@ -1,10 +1,14 @@
 import React from "react"
 import { useNavigate } from "react-router";
-import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+
+
+
 import GTranslateIcon from '@mui/icons-material/GTranslate';
-import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
-import PublicIcon from '@mui/icons-material/Public';
-import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
+import {FcBusinessman} from "react-icons/fc";
+import {FcAddressBook} from "react-icons/fc";
+import {FcPhoneAndroid} from "react-icons/fc";
+import {FcGlobe} from "react-icons/fc";
+import {FcEditImage} from "react-icons/fc"
 
 
 const HerderPersonal_page_information=({personal_data})=>{
@@ -19,27 +23,34 @@ const HerderPersonal_page_information=({personal_data})=>{
     return(
         <div className="personal-page-container">
           <img src={image} alt=""  className="personalImage"/>
-          <p className="personName">{fullName}</p>
           <ul className="collection-text">
             <li>
-              <span><AlternateEmailIcon/> </span>
-              <p> Email User : {email}</p>
+              <div>
+                <span><FcBusinessman style={{fontSize:"1.5em"}}/> </span>
+                <p> Full Name : {fullName}</p>
+              </div>
+              <div>
+                <span><FcAddressBook style={{fontSize:"1.5em"}}/> </span>
+                <p> Email User : {email}</p>
+              </div>
+              <div>
+                <span><GTranslateIcon style={{fontSize:"1.5em"}}/> </span>
+                <p> language speak : {languageSpeak}</p>
+              </div>
             </li>
             <li>
-              <span><GTranslateIcon/> </span>
-              <p> language speak : {languageSpeak}</p>
-            </li>
-            <li>
-              <span><PhoneAndroidIcon/> </span>
-              <p> Phone Number : {phoneNumber}</p>
-            </li>
-            <li>
-              <span><PublicIcon/> </span>
-              <p> country Place : {place}</p>
-            </li>
-            <li>
-              <span><LocalLibraryIcon/> </span>
-              <p> Study : {study}</p>
+              <div>
+                <span><FcPhoneAndroid style={{fontSize:"1.5em"}}/> </span>
+                <p> Phone Number : {phoneNumber}</p>
+              </div>
+              <div>
+                <span><FcGlobe style={{fontSize:"1.5em"}}/> </span>
+                <p> country Place : {place}</p>
+              </div>
+              <div>
+                <span><FcEditImage style={{fontSize:"1.5em"}}/> </span>
+                <p> Study : {study}</p>
+              </div>
             </li>
           </ul>
           <button className="button-section" onClick={editePersonal}>

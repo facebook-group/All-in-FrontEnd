@@ -28,7 +28,6 @@ function Movei_file() {
     })
   },[])
 
-  console.log(Datause)
 
 
   return (

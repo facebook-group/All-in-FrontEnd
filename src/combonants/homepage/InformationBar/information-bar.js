@@ -27,7 +27,6 @@ const Information_bar=()=>{
     const Navi=useNavigate();
     const showIn_formation_Context=useContext(ShowBar_Create_Context);
 
-    console.log(mydata)
 
 
 

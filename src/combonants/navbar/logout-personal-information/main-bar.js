@@ -5,12 +5,21 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import HelpIcon from '@mui/icons-material/Help';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import Logout_button from "./logout-button";
+import { useContext } from "react";
+import { RegusterId_Create_Context } from "../../context-api/personal-page";
 
 
+let mydata
+if(window.localStorage.mydata){
+    mydata=JSON.parse(window.localStorage.mydata)
+}
 
 const Main_bar_personal_information_logout=()=>{
-    const Navi=useNavigate()
+    const Navi=useNavigate();
+    const RegusterId_Context=useContext(RegusterId_Create_Context)
     const go_personal=()=>{
+        RegusterId_Context.setRegusterId(mydata.regusterid)
+        window.localStorage.saveReguster=mydata.regusterid
         Navi("/personalPage")
     }
 
