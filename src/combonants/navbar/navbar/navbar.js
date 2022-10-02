@@ -4,6 +4,7 @@ import Navbar2 from "./navbar2-middel-icon";
 import logo from "../../assest/allin-logo.png";
 import {motion} from "framer-motion";
 import DensitySmallIcon from '@mui/icons-material/DensitySmall';
+import logo1 from "../../assest/logo2.gif"
 
 
 import "../style/navbar.scss"
@@ -71,7 +72,7 @@ const Navbar=()=>{
                     <DensitySmallIcon style={{fontSize:"2.3em" ,marginRight:"10px"}}/>
                   </span>
                   <span onClick={gotohome}>
-                    <motion.img src={logo} alt=""  initial={{scale:1}} animate={{scale:1.05}} transition={{duration:1,yoyo:Infinity}} />
+                    <motion.img src={logo1} alt=""   initial={{scale:1}} animate={{scale:1.05}} transition={{duration:1,yoyo:Infinity}} />
                   </span>
                 </div>
                 <Navbar2 informationbar={false}/>

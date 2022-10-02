@@ -50,7 +50,7 @@ border-radius: 30px;
 
 /* ////////////////////////////////////////////  select section seaction ////////////////////////////////////////// */
 .navbarcontainer .selectdataneed {
-    display: flex;width: 450px;
+    display: flex;width: 500px; margin-top: 5px;
 }
 
 .navbarcontainer .selectdataneed .selectItemBackground {
@@ -59,7 +59,7 @@ background-color: style.$hover;
 
 .navbarcontainer .selectdataneed .selectItemBackground .button-color-section
 {
-    color:style.$button;
+    color:style.$button-color;
 }
 
 
@@ -167,6 +167,14 @@ background-color: style.$hover;
 
 
 
+.icon-for-notification {
+    display: flex; align-items: center; justify-content: center;
+    padding: 5px; background-color: style.$background-color ;
+    font-size: 1.5em; border-radius: 50%; cursor: pointer;
+    color: black;
+}
+
+
 
 .Admin-role-requrst {
     position: absolute;top: 50px;left: -150px;
@@ -215,4 +223,12 @@ cursor: pointer;  display: none; margin-top: 8px;
     .navbar-section-bar-item{
         display: block;
     }
+}
+
+
+
+
+
+.icon-modification {
+    width: 30px; height: 30px; 
 }

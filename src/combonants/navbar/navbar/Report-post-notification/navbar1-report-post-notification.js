@@ -36,7 +36,9 @@ const Report_post_notification=({ReportNotification})=>{
     
     return(
         <div className="icon-holder-report" onClick={showReports}>
-           <BookmarkIcon className="icon"  datatype="other"   /> 
+            <span>
+                <BookmarkIcon className="icon icon-for-notification" style={{fontSize:"2em"}}  datatype="other"   /> 
+            </span>
            {All_Report_Post.length>0?<p className="report-icon-notificatiton">{All_Report_Post.length}</p>:<></>}
            {All_Report_Post.length>0&&btnshowpostes==true?
            All_Report_Post.map(({publisherImage,report,postId,publisherName},i)=>(

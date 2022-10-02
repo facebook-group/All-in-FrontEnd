@@ -8,7 +8,7 @@ import * as Yup from 'yup';
 //The Decoded File
 import axios from 'axios';
 //Style Section The Css file And Class Have Style
-import logo from "../../../assest/allin-logo.png";
+import logo from "../../../assest/logo2.gif";
 import { v4 as uuidv4 } from 'uuid';
 
 

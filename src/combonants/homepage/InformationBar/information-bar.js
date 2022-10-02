@@ -1,23 +1,33 @@
 import React from "react"
-import { useNavigate } from "react-router";
+import { json, useNavigate } from "react-router";
+
+import {FcHome} from "react-icons/fc";
+import {FcCollaboration} from "react-icons/fc";
+import {FcVoicePresentation} from "react-icons/fc";
+import {FcFilmReel} from "react-icons/fc";
+import {FcBusinessman} from "react-icons/fc";
+import {FcAdvertising} from "react-icons/fc";
+import {FcSettings} from "react-icons/fc";
+import {FcShop} from "react-icons/fc"
 
 
-import HomeIcon from '@mui/icons-material/Home';
-import PersonAddIcon from '@mui/icons-material/PersonAdd';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import MovieIcon from '@mui/icons-material/Movie';
-import GroupIcon from '@mui/icons-material/Group';
-import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import './style.scss';
 import { useEffect } from "react";
 import { useContext } from "react";
 import { ShowBar_Create_Context } from "../../context-api/show-information-bar";
 
 
+let mydata
+if(window.localStorage.mydata){
+  mydata=JSON.parse(window.localStorage.mydata)
+}
+
 
 const Information_bar=()=>{
     const Navi=useNavigate();
-    const showIn_formation_Context=useContext(ShowBar_Create_Context)
+    const showIn_formation_Context=useContext(ShowBar_Create_Context);
+
+    console.log(mydata)
 
 
 
@@ -36,30 +46,43 @@ const Information_bar=()=>{
 
     return (
       <ul className='information-bar'>
+        <li>
+          <img src={mydata.image} alt="" style={{width:"35px",height:"35px",borderRadius:"50%"}}/>
+          <p>{mydata.fullName}</p>
+        </li>
         <li datatype="/home">
-          <span><HomeIcon style={{fontSize:"1.7em"}}/></span>
-          <p>home</p>
+          <span><FcHome style={{fontSize:"1.7em"}}/></span>
+          <p>home Page</p>
         </li>
         <li  datatype="/frind">
-          <span> <PersonAddIcon style={{fontSize:"1.7em"}}/></span>
+          <span> <FcCollaboration style={{fontSize:"1.7em"}}/></span>
           <p>Add Frend </p>
         </li>
         <li datatype="/myfrend">
-          <span> <GroupIcon style={{fontSize:"1.7em"}}/></span>
+          <span> <FcVoicePresentation style={{fontSize:"1.7em"}}/></span>
           <p>My Frend </p>
         </li>
         <li datatype="/frendrequest">
-          <span><GroupAddIcon style={{fontSize:"1.7em"}}/> </span>
+          <span><FcAdvertising style={{fontSize:"1.7em"}}/> </span>
           <p>Frend Request</p>
         </li>
         <li datatype="/personalPage">
-          <span><AccountCircleIcon style={{fontSize:"1.7em"}}/> </span>
+          <span><FcBusinessman style={{fontSize:"1.7em"}}/> </span>
           <p>Personal Account</p>
         </li>
         <li datatype="/movies" >
-          <span><MovieIcon style={{fontSize:"1.7em"}} /> </span>
-          <p>Movei</p>
+          <span><FcFilmReel style={{fontSize:"1.7em"}} /> </span>
+          <p>Movei App</p>
         </li>
+        <li datatype="/setting" >
+          <span><FcSettings style={{fontSize:"1.7em"}} /> </span>
+          <p>Setting Programe</p>
+        </li>
+        <li datatype="/shop" >
+          <span><FcShop style={{fontSize:"1.7em"}} /> </span>
+          <p>Shop Section </p>
+        </li>
+
       </ul>
     )
 }

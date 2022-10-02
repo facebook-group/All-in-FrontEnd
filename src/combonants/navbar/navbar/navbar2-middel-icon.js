@@ -1,14 +1,17 @@
-import React, { useEffect, useRef, useState } from "react";
-import CottageIcon from '@mui/icons-material/Cottage';
-import GroupIcon from '@mui/icons-material/Group';
-import Shop2Icon from '@mui/icons-material/Shop2';
-import AddBusinessIcon from '@mui/icons-material/AddBusiness';
+import React from "react";
+
+
+// react icon 
+import {AiOutlineHome} from "react-icons/ai";
+import {BiGroup} from "react-icons/bi";
+import {MdOutlineOndemandVideo} from "react-icons/md";
+import {SiHatenabookmark} from "react-icons/si";
+import {SiEpicgames} from "react-icons/si";
 
 
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import { useNavigate } from "react-router";
-
 
 
 const Navbar2=()=>{
@@ -24,27 +27,32 @@ const Navbar2=()=>{
             <BottomNavigation className="selectItemBackground"  sx={{ width: 600,height:40}}  value={getvalue} onChange={handleChange}>
             <BottomNavigationAction
             className="button-color-section"
-                label="Home"
                 value="/home"
-                icon={<CottageIcon />}
+                icon={<AiOutlineHome style={{fontSize:"2em"}}/>}
             />
             <BottomNavigationAction
             className="button-color-section"
-                label="All Frind"
                 value="/frind"
-                icon={<GroupIcon />}
+                icon={<BiGroup  style={{fontSize:"2em"}} />}
             />
             <BottomNavigationAction
             className="button-color-section"
-                label="Moveis"
                 value="/movies"
-                icon={<Shop2Icon />}
+                icon={<MdOutlineOndemandVideo  style={{fontSize:"2em"}} />}
             />
             <BottomNavigationAction
             className="button-color-section"
-             label="About Me" value="/about"
-              icon={<AddBusinessIcon />} />
+              value="/about"
+              icon={<SiHatenabookmark  style={{fontSize:"2em"}}/>} />
+
+            <BottomNavigationAction
+              className="button-color-section"
+              value="/games"
+              icon={<SiEpicgames  style={{fontSize:"2em"}}/>} />
+
             </BottomNavigation>
+
+            
         </ul>
     )
 }

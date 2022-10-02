@@ -6,7 +6,7 @@ function Page_Not_Found() {
     const Navi=useNavigate()
 
     const Goghome=()=>{
-        Navi("/")
+        Navi("/home")
     }
   return (
     <StyleUse>
