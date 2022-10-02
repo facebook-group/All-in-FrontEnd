@@ -6,6 +6,10 @@ import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
 import MoodIcon from '@mui/icons-material/Mood';
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 
+import {FcOldTimeCamera} from "react-icons/fc";
+import {FcHeadset} from "react-icons/fc";
+import {FcPortraitMode} from "react-icons/fc"
+
 
 
 const CreatePost_section2=({show})=>{
@@ -18,15 +22,15 @@ const CreatePost_section2=({show})=>{
         <>
         <ul onClick={showmodel} className="icon-section">
             <li>
-                <VideoCameraFrontIcon sx={{color:"red" ,fontSize:"1.8em"}}/>
+                <FcHeadset style={{fontSize:"2em"}}/>
                 <p>Live Vedio </p>
             </li>
             <li>
-                <AddAPhotoIcon sx={{color:"green" ,fontSize:"1.8em"}}/>
+                <FcOldTimeCamera style={{fontSize:"2em"}}/>
                 <p>Photo/Vedio</p>
             </li>
             <li>
-                <MoodIcon sx={{color:"yellow",fontSize:"1.8em"}}/>
+                <FcPortraitMode style={{fontSize:"2em"}}/>
                 <p>Feel/Mood</p>
             </li>
         </ul>

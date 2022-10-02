@@ -62,10 +62,10 @@
 .icon-post-container {
     display: flex; padding: 10px;
     .like_and_shareicon {
-        display: flex; align-items: center;
+        display: flex; align-items: center; margin-left: 7px;
         li{
             display: flex; align-items: center; position: relative;
-            margin-right: 5px; font-weight: bold;
+            margin-right: 10px; font-weight: bold;
             p {
                 margin-left: 2px; margin-bottom: 5px;
             }
@@ -73,7 +73,7 @@
     }
     .rating {
         margin-left: auto; margin-right: auto;
-        width: 200px;
+        width: 250px;
     }
 }
 

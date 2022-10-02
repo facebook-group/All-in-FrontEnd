@@ -2,7 +2,7 @@
 @use "../../../main-style/style.scss";
 
 .movei-container-section {
-    position: fixed; right: 15px; top: 55px;
+    position: fixed; right: 15px; top: 55px; max-width: 250px;
     .movei-container {
         display: flex; align-items: center; justify-content: flex-end;
         margin-top: 12px;
@@ -19,7 +19,7 @@
 }
 
 
-@media screen  and (max-width:1200px) {
+@media screen  and (max-width:1150px) {
     .movei-container-section  {
         display: none;
     }

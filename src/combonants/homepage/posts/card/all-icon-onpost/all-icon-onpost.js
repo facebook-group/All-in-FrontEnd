@@ -6,9 +6,16 @@ import ChatIcon from '@mui/icons-material/Chat';
 
 
 
+import {FcLike} from "react-icons/fc";
+import {FcSms} from "react-icons/fc";
+import {FcRating} from "react-icons/fc"
+
+
 import axios from "axios";
 import io from "socket.io-client";
 const socket=io(process.env.REACT_APP_API);
+
+
 
 let mydata
 if(window.localStorage.mydata){
@@ -23,6 +30,8 @@ const Card_icon_post=({postdata})=>{
     let [likesdata,setlikesdata]=useState();
     let [showAllLikes,setshowAllLikes]=useState(false);
 
+    let [showStar,setshowStar]=useState(false)
+
     //get all likes on these post
     useEffect(()=>{
         let data= axios.get(`${process.env.REACT_APP_API}getlike/${postdata.postId}`).then((likedata)=>{
@@ -35,6 +44,11 @@ const Card_icon_post=({postdata})=>{
             })
         })
     },[])
+
+
+    const showRatingSection=()=>{
+        showStar==false?   setshowStar(true):setshowStar(false)
+    }
 
 
     const like=(e)=>{
@@ -66,19 +80,23 @@ const Card_icon_post=({postdata})=>{
         <div className="icon-post-container">
             <ul className="like_and_shareicon">
                 <li>
-                    <FavoriteIcon onClick={like} datatype={postdata.postId} style={{cursor:"pointer"}}/>
+                    <FcLike onClick={like} datatype={postdata.postId} style={{cursor:"pointer",fontSize:"1.5em",marginBottom:"5px"}}/>
                     <p  style={{cursor:"pointer"}} onClick={showLikes}>{likes!==0?likes:<></>}</p>
                     {likes!==0&&showAllLikes==true?<Like_Post_Model likesdata={likesdata}/>:<></>}
                 </li>
                 <li>
-                    <ChatIcon/>
+                    <FcSms style={{cursor:"pointer",fontSize:"1.5em",marginBottom:"5px"}}/>
                     <p >{postdata.commentOnPostes?postdata.commentOnPostes.length:<></>}</p>
+                </li>
+                <li onClick={showRatingSection}>
+                    <FcRating style={{cursor:"pointer",fontSize:"1.5em",marginBottom:"5px"}}/>
                 </li>
 
             </ul>
+            {showStar?
             <div className="rating">
                 <Rating name="read-only" value={postdata.rate} readOnly />
-            </div>
+            </div>:<></>}
         </div>
     )
 }
