@@ -12,8 +12,15 @@ import {FcEditImage} from "react-icons/fc"
 import { RegusterId_Create_Context } from "../../context-api/personal-page";
 
 
+
+let mydata
+if(window.localStorage.mydata){
+  mydata=JSON.parse(window.localStorage.mydata).regusterid
+}
+
 const HerderPersonal_page_information=({personal_data})=>{
-  const {image,fullName,email,languageSpeak,phoneNumber,place,study,frinds  }=personal_data
+  console.log(personal_data)
+  const {image,fullName,email,languageSpeak,phoneNumber,place,study,frinds,regusterid  }=personal_data
   const Navi=useNavigate();
   const RegusterContext=useContext(RegusterId_Create_Context)
 
@@ -76,9 +83,11 @@ const HerderPersonal_page_information=({personal_data})=>{
 
             </div>
 
-          <button className="button-section" onClick={editePersonal}>
-            Edit Personal Information
-          </button>
+            {mydata===regusterid?   
+              <button className="button-section" onClick={editePersonal}>
+                Edite Personal Information
+              </button>:<></>
+            }
         </div>
 
 

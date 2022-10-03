@@ -3,18 +3,23 @@ body {
   font-family: 'Quicksand', sans-serif;
   color: #324e63; 
 }
+
 .main-page-holder {
-  background-image: url("https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2017/02/Photoshop-Replace-Background-Featured.jpg");
-  position: absolute; left: 0; top: 50px; width: 99.3vw; height: 100vh;
-  background-repeat: no-repeat; background-size: cover;
+  display: flex;  flex-wrap: wrap; 
+  margin: 70px 100px; justify-content: space-around;
+
+}
+
+@media screen and (max-width:800px) {
+  .main-page-holder {
+    margin: 70px 15px;
+
+  }
 }
 .personal-page-container {
-  width: 50vw;  background-color: rgba(255, 255, 255, 0.356);padding: 15px;
+  background-color: rgba(255, 255, 255, 0.356);padding: 15px;
   margin-left: auto; margin-right: auto; margin-top: 100px; position: relative;
   border-radius: 20px;
-  box-shadow: 0px -8px 102px 8px rgba(128, 128, 128, 0.438);
-  -webkit-box-shadow: 0px -8px 102px 8px rgba(71, 72, 84, 0.445);
-  -moz-box-shadow: 0px -8px 102px 8px rgba(71, 72, 84, 0.39);
   .personalImage {
     border: 3px solid rgba(71,72,84,0.74); border-radius: 50%; width: 150px; height: 150px;
     position: absolute; left: 50%; top: 0;transform: translate(-50%,-50%);
@@ -57,18 +62,4 @@ body {
 
 
 
-.Mypostes-section {
-  width: 50vw; margin-top: 120px; margin-left: auto; margin-right: auto;
-  
-}
 
-
-@media screen and (max-width:1000px) {
-  .Mypostes-section {
-    width: 80vw;
-
-  }
-  .personal-page-container {
-    width: 80vw;
-  }
-}
