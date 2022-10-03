@@ -19,11 +19,11 @@ const CreatePost_section2=({show})=>{
         <ul onClick={showmodel} className="icon-section">
             <li>
                 <FcHeadset style={{fontSize:"2em"}}/>
-                <p>Live Vedio </p>
+                <p>Live Video </p>
             </li>
             <li>
                 <FcOldTimeCamera style={{fontSize:"2em"}}/>
-                <p>Photo/Vedio</p>
+                <p>Photo/Video</p>
             </li>
             <li>
                 <FcPortraitMode style={{fontSize:"2em"}}/>

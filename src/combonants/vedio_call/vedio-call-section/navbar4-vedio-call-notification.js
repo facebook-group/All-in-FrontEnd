@@ -23,7 +23,7 @@ const Vedio_Call_Notification=({notification_vedio_call,get_status,notification_
         <>
             {notification_vedio_call!==false&&notification_close?<div className="vedio-call-notification"  >
               <ul className="vedio-call-element">
-                <li>You Have Vedio Call From </li>
+                <li>You Have Video Call From </li>
                 <li>
                   <p className="name">{notification_vedio_call.fullName}</p>
                   <img src={notification_vedio_call.image} alt="" style={style.image_profole} />

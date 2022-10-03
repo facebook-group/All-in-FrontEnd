@@ -46,7 +46,7 @@ const HerderPersonal_page_information=({personal_data})=>{
               </div>
               <div>
                 <span><GTranslateIcon style={{fontSize:"1.5em"}}/> </span>
-                <p> language speak : {languageSpeak}</p>
+                <p> Language speak : {languageSpeak}</p>
               </div>
             </li>
             <li>
@@ -56,7 +56,7 @@ const HerderPersonal_page_information=({personal_data})=>{
               </div>
               <div>
                 <span><FcGlobe style={{fontSize:"1.5em"}}/> </span>
-                <p> country Place : {place}</p>
+                <p> Country Place : {place}</p>
               </div>
               <div>
                 <span><FcEditImage style={{fontSize:"1.5em"}}/> </span>
@@ -77,7 +77,7 @@ const HerderPersonal_page_information=({personal_data})=>{
             </div>
 
           <button className="button-section" onClick={editePersonal}>
-            Edite Personal Information
+            Edit Personal Information
           </button>
         </div>
 

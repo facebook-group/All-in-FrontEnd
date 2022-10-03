@@ -33,7 +33,7 @@ const AddFrinfFromAllFrind=({data,mydata,alldata})=>{
 
 return(
     <>
-    <Button size="small" onClick={addfrind}datatype={state.regusterid} >Add Frinde</Button>
+    <Button size="small" onClick={addfrind}datatype={state.regusterid} >Add Friend</Button>
     </>
 )
 }

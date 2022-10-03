@@ -39,7 +39,7 @@ const Verification=()=>{
         <motion.div div  className="varefication-container" initial={{x:-2000}} animate={{x:0}} transition={{duration:.5}}>
               <div  className="verification-inner">
                   <h3>Verification Code</h3>
-                  <p className="text-specif">We Was send 4 length varification code , enter it on below entery</p>
+                  <p className="text-specif">We have sent 4 length verification code , enter it on below entry</p>
                   <input className="email" label="Email"  placeholder="email" onChange={(e) => setValue(e.target.value)}/>
                   <form id="form" ref={Passwordref}>
                       <div className="holder-input">

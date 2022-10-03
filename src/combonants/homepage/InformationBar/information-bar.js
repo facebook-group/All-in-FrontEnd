@@ -55,15 +55,15 @@ const Information_bar=()=>{
         </li>
         <li  datatype="/frind">
           <span> <FcCollaboration style={{fontSize:"1.7em"}}/></span>
-          <p>Add Frend </p>
+          <p>Add Friend </p>
         </li>
         <li datatype="/myfrend">
           <span> <FcVoicePresentation style={{fontSize:"1.7em"}}/></span>
-          <p>My Frend </p>
+          <p>My Friends </p>
         </li>
         <li datatype="/frendrequest">
           <span><FcAdvertising style={{fontSize:"1.7em"}}/> </span>
-          <p>Frend Request</p>
+          <p>Friends Request</p>
         </li>
         <li datatype="/personalPage">
           <span><FcBusinessman style={{fontSize:"1.7em"}}/> </span>
@@ -71,11 +71,11 @@ const Information_bar=()=>{
         </li>
         <li datatype="/movies" >
           <span><FcFilmReel style={{fontSize:"1.7em"}} /> </span>
-          <p>Movei App</p>
+          <p>Movies App</p>
         </li>
         <li datatype="/setting" >
           <span><FcSettings style={{fontSize:"1.7em"}} /> </span>
-          <p>Setting Programe</p>
+          <p>Setting Programme</p>
         </li>
         <li datatype="/shop" className="shop-info" >
           <span><FcShop style={{fontSize:"1.7em"}} /> </span>

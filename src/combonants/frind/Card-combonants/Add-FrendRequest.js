@@ -55,7 +55,7 @@ const AcceptFrendRequst=({data,mydata,alldata})=>{
 
 return(
 <>
-    <Button size="small" onClick={acceptfrendrqeuest}datatype={state.PersonSendFrendRequest} images={state.image} fullnames={state.fullName}>Accept frend</Button>    
+    <Button size="small" onClick={acceptfrendrqeuest}datatype={state.PersonSendFrendRequest} images={state.image} fullnames={state.fullName}>Accept friend</Button>    
 </>
 )
 }
