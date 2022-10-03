@@ -12,7 +12,7 @@
 
 .connection-frind .header {
     display: flex;justify-content: space-between;cursor: pointer; text-transform: capitalize;
-    padding: 10px;background-color: style.$hover;color:style.$button;
+    padding: 10px;background-color: style.$hover;color:style.$button; border-bottom: 2px solid style.$background-color; 
 
 }
 .connection-frind .header p {

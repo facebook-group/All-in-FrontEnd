@@ -48,25 +48,20 @@ const Edite_personal_information=()=>{
         <>
             <div className="container-editeInformation">
                 <div className="container-editeInformation">
-                        <form action="index.html" method="post" ref={getdata} > 
-                            <h1> Edit Personal Information </h1>                
+                        <form action="index.html" method="post" ref={getdata}  className="form-container"> 
                                     <div className="container-item"> 
-                                        <label className="icon1-label">Full Name:</label>
-                                        <input className="icon1-input"  type="text" id="name" name="fullName"/>
+                                        <input className="icon1-input"  type="text" id="name" name="fullName" placeholder="full name"/>
                                     </div>
 
                                     <div className="container-item">
-                                        <label className="icon1-label" >Phone Number:</label>
-                                        <input className="icon1-input" type="tel" id="numberphone" name="phoneNumber"/>
+                                        <input className="icon1-input" type="tel" id="numberphone" name="phoneNumber" placeholder="phone Number"/>
                                     </div>
 
                                     <div className="container-item">
-                                        <label className="icon1-label">Age:</label>
                                         <input className="icon1-input" type="date" id="age"  name="age"  placeholder="DD/MM/YYYY"/>
                                     </div>
 
                                     <div className="container-item">
-                                        <label  className="icon1-label" >Gender</label>
                                         <select name="gender"  className="icon1-input">
                                           <option value="male" key="">Male</option>
                                           <option value="femal" key="">Female</option>

@@ -13,7 +13,7 @@ const Connection_Frind=({onlinefrind})=>{
     
     return(
         <div className="connection-frind" >
-                <div className="header" onClick={Addactive}>
+                <div className="header" onClick={Addactive} >
                     <p style={{display:"flex",alignItems:"center"}}><FcAbout style={{fontSize:"1.2em",marginRight:"5px",
 	}}/> <span> chat with my friend</span></p>
                 </div>
