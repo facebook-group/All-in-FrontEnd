@@ -83,22 +83,12 @@ const HerderPersonal_page_information=({personal_data})=>{
 
             </div>
 
-<<<<<<< HEAD
-          <button className="button-section" onClick={editePersonal}>
-            Edit Personal Information
-          </button>
-=======
             {mydata===regusterid?   
               <button className="button-section" onClick={editePersonal}>
                 Edite Personal Information
               </button>:<></>
             }
->>>>>>> 5f7de3d (lith)
         </div>
-
-
-
-
         </>
     )
 }
