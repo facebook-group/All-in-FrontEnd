@@ -9,7 +9,7 @@ body {
   background-repeat: no-repeat; background-size: cover;
 }
 .personal-page-container {
-  width: 50vw;  background-color: style.$hover;padding: 15px;
+  width: 50vw;  background-color: rgba(255, 255, 255, 0.356);padding: 15px;
   margin-left: auto; margin-right: auto; margin-top: 100px; position: relative;
   border-radius: 20px;
   box-shadow: 0px -8px 102px 8px rgba(128, 128, 128, 0.438);
@@ -40,6 +40,15 @@ body {
   }
 
 
+}
+
+
+
+.all-frind-container {
+  display: flex; padding: 20px 50px;
+  img{
+    width: 100px; height: 100px; border-radius: 10px;
+  }
 }
 
 
