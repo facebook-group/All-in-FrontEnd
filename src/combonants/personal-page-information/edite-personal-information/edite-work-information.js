@@ -14,7 +14,7 @@ const Edote_Work_IInformation=()=>{
 
 
             <div className="container-item">
-                <input  className="icon1-input" type="text" id="place" name="languageSpeak" placeholder="langusge"/>
+                <input  className="icon1-input" type="text" id="place" name="languageSpeak" placeholder="country"/>
             </div>
 
             <div className="container-item">

@@ -3,7 +3,7 @@
 .container-editeInformation {
      margin-left: auto; margin-right: auto;width: 100vw; height: 92vh;
      border-radius: 10px;  text-align: center;
-     background-image: url("https://img.freepik.com/free-photo/flat-lay-travel-composition-with-world-map-wooden-background_169016-16173.jpg?w=2000");
+     background-image: url('../../../assest/backgroundForm.png');
      background-position: center; background-size: cover;
 
      .form-container {
@@ -22,18 +22,17 @@
                 font-weight: bold; font-size: 1.5em; 
 
             }
+        option {
+            background-color: rgba(0, 0, 0, 0.637); font-weight: bold; 
+        }
+        optgroup{
+            background-color: rgba(0, 0, 0, 0.637); font-weight: bold; 
+
+        }
         }
 
         margin-bottom: 10px;
     
-    }
-
-    .radio-section {
-        .icon1-label {
-            font-weight: bold; 
-            width: 150px;
-        }
-
     }
 
 
@@ -47,6 +46,14 @@
     .container-editeInformation{
         .form-container{
             width: 70vw;
+        }
+    }
+}
+
+@media screen and (max-width:700px) {
+    .container-editeInformation{
+        .form-container{
+            width: 100vw;
         }
     }
 }

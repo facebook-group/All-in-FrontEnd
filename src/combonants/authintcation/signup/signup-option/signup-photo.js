@@ -4,8 +4,9 @@ import React, { useState } from "react"
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
-import classes from "../style-signup/materialui-signup";
 import axios from "axios";
+
+import {MdAddAPhoto} from "react-icons/md"
 
 const Input = styled('input')({
   display: 'none',
@@ -43,8 +44,9 @@ const SignupPhoto=({data})=>{
             <Stack direction="row" alignItems="center" spacing={2} >
                 <label htmlFor="contained-button-file">
                     <Input accept="image/*" id="contained-button-file" multiple type="file"  onChange={getImage_file} />
-                    <Button variant="contained" component="span" sx={{width:"150px",marginLeft:"80px",marginBottom:"15px"}} >
+                    <Button variant="contained" component="span" sx={{width:"200px", marginLeft:"40px",marginBottom:"20px"}} >
                       Upload
+                      <MdAddAPhoto style={{fontSize:"1.5em",marginLeft:"5px"}}/>
                     </Button>
                 </label>
                 {showImage!==undefined?<img src={showImage} className="show-image-profile"  />:<></>}
