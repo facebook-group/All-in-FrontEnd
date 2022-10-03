@@ -1,10 +1,6 @@
 import React from "react"
 
 
-//Material Ui Icons
-import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
-import MoodIcon from '@mui/icons-material/Mood';
-import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 
 import {FcOldTimeCamera} from "react-icons/fc";
 import {FcHeadset} from "react-icons/fc";

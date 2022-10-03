@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Navbar1 from "./navbar1-notification-icon";
 import Navbar2 from "./navbar2-middel-icon";
-import logo from "../../assest/allin-logo.png";
 import {motion} from "framer-motion";
 import DensitySmallIcon from '@mui/icons-material/DensitySmall';
-import logo1 from "../../assest/logoweb.png"
+import logo1 from "../../assest/logo2.gif"
 
 
 import "../style/navbar.scss"

@@ -36,7 +36,7 @@ function Movei_file() {
                     <div className='movei-container'  onClick={getdata}  key={i} datatype={`${adult}$$$${poster_path}$$$${original_title}$$$${id}$$$${original_language}$$$${overview}$$$${popularity}$$$${release_date}$$$${vote_average}$$$${vote_count}`}>
                           <div className='text-information-movei'>
                               <p>{original_title}</p>
-                              {/* <p>{release_date}</p> */}
+                              <p>{release_date}</p>
                               <p>Rating: {vote_average}/10</p>
                           </div>
                           <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt="" />

@@ -25,9 +25,7 @@ const Modal_Text_Icon=({text_value_get,ImagePoster})=>{
 
     return(
         <>
-        {/* <p className="text-area">{text_value} </p> */}
             <input type="text" className="text-area" placeholder="What You Think About?"  onChange={dataType}/>
-
             <div className="icon-section-item">
                 <div>
                 <Image_Frend_Icon ImagePoster={ImagePoster}/>
