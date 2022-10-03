@@ -45,7 +45,7 @@ const Information_bar=()=>{
 
     return (
       <ul className='information-bar'>
-        <li>
+        <li className="perosn-info">
           <img src={mydata.image} alt="" style={{width:"35px",height:"35px",borderRadius:"50%"}}/>
           <p>{mydata.fullName}</p>
         </li>
@@ -77,7 +77,7 @@ const Information_bar=()=>{
           <span><FcSettings style={{fontSize:"1.7em"}} /> </span>
           <p>Setting Programe</p>
         </li>
-        <li datatype="/shop" >
+        <li datatype="/shop" className="shop-info" >
           <span><FcShop style={{fontSize:"1.7em"}} /> </span>
           <p>Shop Section </p>
         </li>

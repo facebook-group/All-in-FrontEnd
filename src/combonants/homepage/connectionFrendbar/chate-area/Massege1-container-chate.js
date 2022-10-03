@@ -4,11 +4,6 @@ import axios from "axios";
 
 //material ui section 
 import CloseIcon from '@mui/icons-material/Close';
-import CallIcon from '@mui/icons-material/Call';
-
-//all style css file
-import style from "../../../style_combonants/Style-combonants";
-
 import Massage2_section from "./Massege2-input-text"
 import Vedio_Call from "./Massege4-vedio-call";
 

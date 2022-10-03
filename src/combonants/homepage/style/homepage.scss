@@ -116,6 +116,12 @@
     font-size: .6em;color: style.$hover; margin-left: auto;
 
 }
+
+@media screen and (max-width:800px) {
+    .massanger{
+        left: 0; top: 0;height: 80vh;
+    }
+}
 /* //----------------------------------------text section massenger ---------------------------------------// */
 .massage-container .text {
     display: flex;

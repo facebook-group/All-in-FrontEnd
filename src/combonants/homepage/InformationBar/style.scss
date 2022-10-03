@@ -28,9 +28,14 @@
     display: none;
   }
   .information-bar.active-element {
-    display: block; background-color: style.$background-color; z-index: 10000000000000;
-    width: 100%; position: absolute; left: 0; top: 80px;
+    display: block; background-color: white; z-index: 10000000000000;
+    width: 100%; position: absolute; left: 0; top: 50px;
     display: flex; justify-content: center;
+
+
+    .shop-info ,.perosn-info {
+      display: none;
+    }
     span {
       padding: 15px;
     }
