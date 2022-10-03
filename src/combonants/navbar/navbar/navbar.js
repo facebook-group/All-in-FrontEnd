@@ -4,7 +4,7 @@ import Navbar2 from "./navbar2-middel-icon";
 import logo from "../../assest/allin-logo.png";
 import {motion} from "framer-motion";
 import DensitySmallIcon from '@mui/icons-material/DensitySmall';
-import logo1 from "../../assest/logo2.gif"
+import logo1 from "../../assest/logoweb.png"
 
 
 import "../style/navbar.scss"

@@ -10,7 +10,7 @@ const Card_Post=({postdata})=>{
     return(
       <div className="post-card-container">
         <Header_card postdata={postdata}/>
-        <img src={postdata.image} alt="" className="main-image" />
+      { postdata.image? <img src={postdata.image} alt="" className="main-image" />:""}
           <p  className="post-text" >{postdata.text}</p>
           <Card_icon_post postdata={postdata}/>
         <Card_Comment_Section postdata={postdata}/>

@@ -24,7 +24,8 @@ function Header_card({postdata}) {
   return (
     <div className='header-card-conrtainer'>
         <div className='left-side'>
-            <img src={publisherImage} alt="" />
+      
+             <img src={publisherImage} alt="" />
             <div className='text-section'>
                 <p className='name-publisher'>{publisherName}</p>
                 <p className='time'><Moment fromNow ago>{createdAt}</Moment></p>

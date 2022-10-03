@@ -13,6 +13,8 @@
 .connection-frind .header {
     display: flex;justify-content: space-between;cursor: pointer; text-transform: capitalize;
     padding: 10px;background-color: style.$hover;color:style.$button;
+  border-radius:15px 15px 0px 0px;
+
 }
 .connection-frind .header p {
     text-align: center; text-align: center; font-weight: bold; width: 100%;
