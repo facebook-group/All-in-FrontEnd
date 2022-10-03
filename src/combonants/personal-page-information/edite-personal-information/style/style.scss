@@ -1,50 +1,59 @@
 @use "../../../main-style/style.scss";
 
 .container-editeInformation {
-    margin-top: 45px; padding: 10px 20px;
-    margin-left: auto; margin-right: auto;
-     border-radius: 10px; background-color: style.$background-color;
-     width: 60vw; text-align: center;
+     margin-left: auto; margin-right: auto;width: 100vw; height: 92vh;
+     border-radius: 10px;  text-align: center;
+     background-image: url('../../../assest/backgroundForm.png');
+     background-position: center; background-size: cover;
 
-    h1 {
-        text-align: center; font-size: 1.5em;
-        padding: 15px;color: style.$button;
-        font-style: italic; font-weight: bold;
-    }
+     .form-container {
+        margin-top: 50px; width: 40vw; padding: 50px 50px;
+     }
+
     .container-item {
         display: flex; align-items: center; justify-content: center;
-        .icon1-label {
-            font-weight: bold; 
-            width: 150px;
-        }
         .icon1-input {
-            width: 40%; height: 35px; border-radius: 5px;
-            background-color: style.$hover; border: 1px solid style.$hover;
+            height: 35px; width: 100%;
+            background-color: rgba(192, 192, 192, 0);
+            border: none;
+            border-bottom: 2px solid black; font-weight: bold; 
+            text-transform: capitalize; color: white; font-size: 1em;
+            ::placeholder{
+                font-weight: bold; font-size: 1.5em; 
+
+            }
+        option {
+            background-color: rgba(0, 0, 0, 0.637); font-weight: bold; 
+        }
+        optgroup{
+            background-color: rgba(0, 0, 0, 0.637); font-weight: bold; 
+
+        }
         }
 
         margin-bottom: 10px;
     
     }
 
-    .radio-section {
-        .icon1-label {
-            font-weight: bold; 
-            width: 150px;
-        }
-
-    }
-
-.element-container{
-    display: flex; justify-content: space-between; width: 80%;
-    label {
-        font-weight: bold; color: style.$button;
-    }
-}
 
 .button-custom {
-    padding: 10px 30px; background-color: style.$hover;
-    margin-left: auto; margin-right: auto; display: block; margin-top: 50px;
-    background-color: style.$button; border: none;  color: white; cursor: pointer;
-    font-weight: bold;  border-radius: 5px; font-size: 1.3em;
+    padding: 10px 30px; background-color: black; color: white; 
+    border-radius: 5px; font-weight: bold; text-transform: capitalize;
 }
+}
+
+@media screen and (max-width:1000px) {
+    .container-editeInformation{
+        .form-container{
+            width: 70vw;
+        }
+    }
+}
+
+@media screen and (max-width:700px) {
+    .container-editeInformation{
+        .form-container{
+            width: 100vw;
+        }
+    }
 }

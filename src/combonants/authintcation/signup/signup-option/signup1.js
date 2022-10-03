@@ -22,7 +22,6 @@ import "../style-signup/signup.scss"
 const  SignUp1=()=> {
 const Navi=useNavigate();
 const id=uuidv4();
-const [country,setcountry]=useState("");
 const [uploadImage,setUploadImage]=useState();
 const [statusEmail,setstatusEmail]=useState(false)
 //use to show the error 
@@ -35,10 +34,6 @@ const initialValues={
 }
 
 
-//get the value of country from the chiled  using callback from signup-country
-  const countrydata=(data)=>{
-    setcountry(data.country)
-  }
 //get the value of country from the chiled  using callback from sognup-photo
   const photodata=(getdata)=>{
     setUploadImage(getdata)
@@ -55,7 +50,7 @@ const initialValues={
       fullName:fullName,
       email:email,
       password:password
-      ,place:country,
+      ,place:"jordan",
       uploadImage:uploadImage,
       verification:Random4digit
     }
@@ -108,7 +103,6 @@ const initialValues={
                                       <label>Password</label>
                                   </div>
 
-                                  <SignupCountry data={countrydata}/>
                                   <SignupPhoto data={photodata} />
 
                                   <motion.input type="submit" value="Sign Up"  whileHover={{scale:1.1 ,    transition: { duration: 1 ,yoyo:Infinity},}}  />

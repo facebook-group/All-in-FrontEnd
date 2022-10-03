@@ -5,7 +5,6 @@ const Edote_Work_IInformation=()=>{
     return(
         <>
              <div className="container-item">
-                    <label className="icon1-label">Role:</label>
                     <select name="user_job" className="icon1-input">
                         <option value="writer" key="">Writer</option>
                         <option value="editor" key="">Editor</option>
@@ -15,17 +14,14 @@ const Edote_Work_IInformation=()=>{
 
 
             <div className="container-item">
-                <label  className="icon1-label">language Speak</label>
-                <input  className="icon1-input" type="text" id="place" name="languageSpeak"/>
+                <input  className="icon1-input" type="text" id="place" name="languageSpeak" placeholder="country"/>
             </div>
 
             <div className="container-item">
-                <label  className="icon1-label">Country:</label>
-                <input  className="icon1-input" type="text" id="place" name="place"/>
+                <input  className="icon1-input" type="text" id="place" name="place" placeholder="Country"/>
             </div>
 
             <div className="container-item">
-                <label className="icon1-label">Study:</label>
                 <select  className="icon1-input" id="job" name="study">
                     <optgroup label="Web">
                     <option value="frontend_developer">Front-End Developer</option>
@@ -50,7 +46,6 @@ const Edote_Work_IInformation=()=>{
 
 
             <div className="container-item">
-                <label className="icon1-label">Social Situation</label>
                 <select className="icon1-input" name="socialSituation">
                     <option value="marid" key="">Married</option>
                     <option value="single" key="">Single</option>
