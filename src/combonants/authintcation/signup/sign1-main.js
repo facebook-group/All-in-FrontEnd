@@ -1,7 +1,6 @@
 import React from "react";
 import SignUp1 from "./signup-option/signup1";
 import "../signup/style-signup/signup.scss";
-import reguster from "../../assest/reguster.png";
 import {motion} from "framer-motion"
 
 

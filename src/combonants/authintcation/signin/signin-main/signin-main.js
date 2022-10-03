@@ -10,7 +10,7 @@ import jwt_decode from "jwt-decode";
 
 //Style Section The Css file And Class Have Style
 import "../signin-style/signin-style.scss";
-import logo from "../../../assest/logo2.gif";
+import logo from "../../../assest/logo.png";
   
 const SignIn=()=>{
     const Navi=useNavigate();
