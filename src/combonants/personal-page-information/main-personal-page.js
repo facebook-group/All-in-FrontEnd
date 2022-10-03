@@ -27,17 +27,18 @@ const Personal_page_information=()=>{
          })
     },[])
 
-    console.log(DataUse)
 
     return(
-        <div className="main-page-holder">
-          {DataUse!==false?<HerderPersonal_page_information personal_data={DataUse}/>:<></>}
-          <ul className="Mypostes-section">
+        <ul className="main-page-holder">
+            <li className="container-information">
+                {DataUse!==false?<HerderPersonal_page_information personal_data={DataUse}/>:<></>}
+            </li>
+            <li className="container-postet">
                 {DataUse!==false?DataUse.posts.map((data,i)=>(
                     <Card_Post postdata={data} key={i}/>
                 )):<></>}
-          </ul>
-        </div>
+            </li>
+        </ul>
     )
 }
 
