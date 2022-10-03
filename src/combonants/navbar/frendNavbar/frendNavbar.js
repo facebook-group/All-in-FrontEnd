@@ -31,9 +31,9 @@ const FrendNavbar=()=>{
                 indicatorColor="primary"
                 aria-label="primary tabs example"
             >
-                <Tab value="/frind" label="All Frend" />
-                <Tab value="/myfrend" label="My Frend" />
-                <Tab value="/frendrequest" label="Frend Request" />
+                <Tab value="/frind" label="ُFind Friends" />
+                <Tab value="/myfrend" label="My Friends" />
+                <Tab value="/frendrequest" label="Friend Request" />
             </Tabs>
             </Box>
         </div>
