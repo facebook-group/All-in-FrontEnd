@@ -95,7 +95,7 @@ const SignIn=()=>{
                         )}
                         </Formik>   
 
-                        { verificationProblem!==false? <motion.p   onClick={verifyEmail} initial={{scale:1}} animate={{scale:1.2}} transition={{duration:1,yoyo:Infinity}} className="verification" >Press here To Verification...</motion.p>:<></>}    
+                        { verificationProblem!==false? <motion.p   onClick={verifyEmail} initial={{scale:1}} animate={{scale:1.2}} transition={{duration:1,yoyo:Infinity}} className="verification" >Press here To Verify...</motion.p>:<></>}    
                         { wrongEmailOrPass!==false? <motion.p   initial={{scale:1}} animate={{scale:1.2}} transition={{duration:1,yoyo:Infinity}} className="verification" >{wrongEmailOrPass}</motion.p>:<></>}              
                 </div>
             </motion.div>

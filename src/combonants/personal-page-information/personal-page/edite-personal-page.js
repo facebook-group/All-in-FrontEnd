@@ -26,7 +26,7 @@ const Edite_personal_page=({personal_data})=>{
                 <ul className="container-element">
                      <li>
                         <AlternateEmailIcon/>
-                        <div>Email Adress :<p className="value-text">{email}</p></div>
+                        <div>Email Address :<p className="value-text">{email}</p></div>
                     </li>
 
                     <li>
@@ -43,7 +43,7 @@ const Edite_personal_page=({personal_data})=>{
                     </li>
                     <li>
                         <AccessibilityIcon/>
-                        <div>Your Ginder Is :<p className="value-text">{gender}</p></div>
+                        <div>Your Gender Is :<p className="value-text">{gender}</p></div>
                     </li>
                     <li>
                         <PhoneAndroidIcon/>

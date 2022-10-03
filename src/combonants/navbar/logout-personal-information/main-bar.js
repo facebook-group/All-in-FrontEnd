@@ -32,7 +32,7 @@ const Main_bar_personal_information_logout=()=>{
                     <span><PersonIcon/> </span>
                 </li>
                 <li>
-                    <p> privacy</p>
+                    <p> Privacy</p>
                     <span><SettingsIcon/></span>
                 </li>
                 <li>

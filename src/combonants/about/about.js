@@ -52,7 +52,7 @@ function About() {
                   <h4 style={{ marginBottom: '1rem', color: 'black' }}>{name}</h4>
                   <a href={github}>
                     <VscGithubInverted className='iconG' />
-                    Githup Page
+                    Github Page
                   </a>
                   <p
                     className='text'

@@ -7,7 +7,7 @@ const Edote_Work_IInformation=()=>{
              <div className="container-item">
                     <label className="icon1-label">Role:</label>
                     <select name="user_job" className="icon1-input">
-                        <option value="writer" key="">writer</option>
+                        <option value="writer" key="">Writer</option>
                         <option value="editor" key="">Editor</option>
                         <option value="user" key="">User</option>
                     </select>
@@ -52,7 +52,7 @@ const Edote_Work_IInformation=()=>{
             <div className="container-item">
                 <label className="icon1-label">Social Situation</label>
                 <select className="icon1-input" name="socialSituation">
-                    <option value="marid" key="">Marrid</option>
+                    <option value="marid" key="">Married</option>
                     <option value="single" key="">Single</option>
                 </select>
             </div>

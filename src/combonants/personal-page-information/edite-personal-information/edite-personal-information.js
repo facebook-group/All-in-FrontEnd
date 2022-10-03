@@ -49,7 +49,7 @@ const Edite_personal_information=()=>{
             <div className="container-editeInformation">
                 <div className="container-editeInformation">
                         <form action="index.html" method="post" ref={getdata} > 
-                            <h1> Edite Personal Information </h1>                
+                            <h1> Edit Personal Information </h1>                
                                     <div className="container-item"> 
                                         <label className="icon1-label">Full Name:</label>
                                         <input className="icon1-input"  type="text" id="name" name="fullName"/>
@@ -69,12 +69,12 @@ const Edite_personal_information=()=>{
                                         <label  className="icon1-label" >Gender</label>
                                         <select name="gender"  className="icon1-input">
                                           <option value="male" key="">Male</option>
-                                          <option value="femal" key="">Femal</option>
+                                          <option value="femal" key="">Female</option>
                                         </select>
                                     </div>
                           
                                     <Edote_Work_IInformation/>            
-                            <button className="button-custom" onClick={get_edite_information} >Edite Information</button>
+                            <button className="button-custom" onClick={get_edite_information} >Edit Information</button>
                         </form>
                     </div>
                 </div>
