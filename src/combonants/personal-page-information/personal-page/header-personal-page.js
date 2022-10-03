@@ -89,10 +89,6 @@ const HerderPersonal_page_information=({personal_data})=>{
               </button>:<></>
             }
         </div>
-
-
-
-
         </>
     )
 }
