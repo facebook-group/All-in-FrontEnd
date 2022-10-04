@@ -33,6 +33,7 @@ import Personal_page_information from "./combonants/personal-page-information/ma
 import Edite_personal_information from "./combonants/personal-page-information/edite-personal-information/edite-personal-information";
 // about
 import About from "./combonants/about/about";
+import About2 from "./combonants/about/about2/about2";
 
 //store using like collecter f the all information 
 import { store } from "./redux/store/store";
@@ -72,6 +73,8 @@ const App=()=>{
                                                             <Route path="/movies/:category/:id" element={<> <Navbar/> <Detail/>   </>}/>  
                                                           <Route path="/movie" element={<> <Navbar/> <MovieGrid/>   </>}/>
                                                         <Route path="/about" element={<> <Navbar/> <About/>   </>}/>
+                                                        <Route path="/about2" element={<> <Navbar/> <About2/>   </>}/>
+
                                                 <Route path="*" element={<Page_Not_Found/>}/>
                                           </Routes>
                                     </BrowserRouter>
