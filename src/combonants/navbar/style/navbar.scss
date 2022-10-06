@@ -36,15 +36,12 @@ border-radius: 30px;
 .navbarcontainer .navbarnotifcation  .icon.active {
     color: red;
 }
-.navbarcontainer .navbarnotifcation  .icon:hover{
-    color:style.$hover;
-    transition: all .1s;cursor: pointer;
-    transform: scale(1.1);
-
-}
 
 .navbarnotifcation .frendnotification {
     border-radius: 50%; color: red; font-weight: bold;
+    background-color: white;  font-size: .8em;
+    right: 0; top: -3px; display: flex; align-items: center; justify-content: center;
+
 
 }
 
@@ -231,4 +228,30 @@ cursor: pointer;  display: none; margin-top: 8px;
 
 .icon-modification {
     width: 30px; height: 30px; 
+}
+
+
+.notification-massage {
+    position: absolute; top: -5px; right: 0; background-color: red; color: white;
+    font-size: .5em; border-radius: 50%; padding: 3px;
+}
+
+
+
+//--------------------------------------------massage notificationn--------------------------------------//
+.massage-notification-container  {
+    position: absolute; left: -150px; top: 50px;
+    background-color: white; width: 200px;
+    .massage-container-notification{
+        padding: 5px;
+        .left-side {
+            display: flex; align-items: center; padding: 1px; border: 1px solid style.$button;
+            .text-area {
+                font-size: .8em; margin-left: 5px;
+            }
+        }    
+        &:hover {
+            background-color: style.$background-color; transition: all .5s;
+        }
+    }
 }

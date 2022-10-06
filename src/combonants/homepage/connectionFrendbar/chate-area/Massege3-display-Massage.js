@@ -10,16 +10,19 @@ if(window.localStorage.mydata){
 }
 
 
-const Massrg_section3=({allmassage})=>{
+const Massrg_section3=({allmassage,itemShown})=>{
     //use to scroll outomatic to buttom by refreance to elment in the bottom 
     const lastthing=useRef()
     useEffect(()=>{
         lastthing.current?.scrollIntoView();
     },[allmassage])
+
+
+    
     return(
         <>
             <div className="massage-container"  >
-                {allmassage!==undefined?allmassage.map(({createdAt,frindid,fullName,image,myfrindid,text},i)=>{
+                {allmassage!==undefined?allmassage.map(({createdAt,frindid,fullName,image,myfrindid,text,itemShown},i)=>{
                     if(mydata.regusterid==frindid){
                         return (                  
                                 <div className="sender" key={i}>
@@ -28,6 +31,7 @@ const Massrg_section3=({allmassage})=>{
                                             <div className="text-container">
                                                 <p className="massenger-text">{text}</p>
                                                 <p className="time-section"><Moment fromNow>{createdAt}</Moment></p>
+                                                <p>{itemShown}</p>
                                             </div>
                                         </div>
                                         <p ref={lastthing}></p>
@@ -48,6 +52,8 @@ const Massrg_section3=({allmassage})=>{
                     }
                  })
                 :<></>}
+
+                 
             </div>
 
         </>

@@ -17,6 +17,7 @@ import Main_bar_personal_information_logout from "../logout-personal-information
 import io from "socket.io-client"
 import Report_post_notification from "./Report-post-notification/navbar1-report-post-notification";
 import Role_update_request from "./admin-request-bar/Role_update_request_admin";
+import Massage_notification from "./massage-notification";
 const socket=io(process.env.REACT_APP_API);
 
 
@@ -29,7 +30,7 @@ if(window.localStorage.mydata){
 }
 
 
-const Navbar1=({notification,ReportNotification})=>{
+const Navbar1=({notification,ReportNotification,massageNotification})=>{
     const [FrendNotification,setFrendNotification]=useState()
     const [displaybar,setdisplaybar]=useState(false)
 
@@ -38,6 +39,9 @@ const Navbar1=({notification,ReportNotification})=>{
 
     const [Show_Hide_Role_damin,setShow_Hide_Role_damin]=useState(false)
     const [Role_Request_Data,setRole_Request_Data]=useState(false)
+
+    let [showMassageSection,setshowMassageSection]=useState(false)
+
 
     
 
@@ -50,6 +54,7 @@ const Navbar1=({notification,ReportNotification})=>{
     const notification_Display=(e)=>{
         const selectItem=(e.currentTarget.getAttribute("datatype"))
         displaybar===false?setdisplaybar(selectItem):setdisplaybar(false)
+
     }
 
     let frendNotificationWillLoop
@@ -57,6 +62,8 @@ const Navbar1=({notification,ReportNotification})=>{
         frendNotificationWillLoop=FrendNotification.map((a,i)=>(
             <NavBar1Card data={a} key={i}/>
         ))
+
+
 
     }
 
@@ -86,6 +93,38 @@ const Navbar1=({notification,ReportNotification})=>{
 
 
 
+    let [CustomMassage,setCustomMassae]=useState([])
+    useEffect(()=>{
+        let newData={}
+        if(massageNotification.length>0){
+            console.log(massageNotification)
+            massageNotification.forEach((data)=>{
+
+                if(newData[data.chatId]==undefined){
+                    newData[data.chatId]={text:data.text,number:1,image:data.image}
+
+                }else{
+                    let newNumber=newData[data.chatId].number+=1
+                    newData[data.chatId]={text:data.text,number:newNumber,image:data.image}
+
+                }
+            })
+            setCustomMassae(Object.values(newData))    
+        }
+
+    },[massageNotification])
+
+    const notification_Email=()=>{
+        showMassageSection==false?setshowMassageSection(true):setshowMassageSection(false)
+
+    }
+
+
+    console.log(CustomMassage)
+
+
+
+
 
 
 
@@ -96,11 +135,15 @@ const Navbar1=({notification,ReportNotification})=>{
                 <span  className="icon icon-for-notification" onClick={notification_Display} datatype="frend"  >
                     <IoIosNotifications />
                 </span>
-                {FrendNotification!==undefined?<p className="frendnotification">{FrendNotification.length>0?FrendNotification.length:<></>}</p>:<></>}
+                {FrendNotification&&FrendNotification.length>0!==undefined?<p className="frendnotification">{FrendNotification.length>0?FrendNotification.length:<></>}</p>:<></>}
             </div>
 
-            <span  className="icon  icon-for-notification" onClick={notification_Display} datatype="massage" >
+            <span  className="icon  icon-for-notification" onClick={notification_Email} datatype="massage" style={{position:"relative"}} >
                 <MdEmail />
+                {massageNotification.length>0?<p className="notification-massage">{massageNotification.length}</p>:<></>}
+                <div className="massage-notification-container">
+                    {showMassageSection==true&&CustomMassage.length>0?CustomMassage.map((data,i)=>(<Massage_notification key={i} CustomMassage={data}/>)):<></>}
+                </div>
             </span>
             {mydata.role!=='admin'? <Report_post_notification ReportNotification={ReportNotification}/>:<></>}
 

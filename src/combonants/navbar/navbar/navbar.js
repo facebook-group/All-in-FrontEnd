@@ -4,6 +4,7 @@ import Navbar2 from "./navbar2-middel-icon";
 import {motion} from "framer-motion";
 import DensitySmallIcon from '@mui/icons-material/DensitySmall';
 import logo1 from "../../assest/logo.png"
+import MassageRing from "../../assest/massage-ringTone.mp4"
 
 
 import "../style/navbar.scss"
@@ -12,6 +13,8 @@ import io from "socket.io-client"
 import { useNavigate } from "react-router";
 import { useContext } from "react";
 import { ShowBar_Create_Context } from "../../context-api/show-information-bar";
+import { Chate_Create_Context } from "../../context-api/chate-notification";
+import axios from "axios";
 const socket=io(process.env.REACT_APP_API)
 
 let mydata
@@ -22,12 +25,19 @@ if(window.localStorage.mydata){
 
 
 const Navbar=()=>{
-    const[notification,setnotification]=useState()
+    const[notification,setnotification]=useState();
     const[ReportNotification,setReportNotification]=useState();
-    const [showSide,setshowSide]=useState(false)
+    const [showSide,setshowSide]=useState(false);
     const Navi=useNavigate();
+    const  showSideBar=useContext(ShowBar_Create_Context);
+    let audio = new Audio(MassageRing);
 
-    const  showSideBar=useContext(ShowBar_Create_Context)
+
+    const [newMassageCome,setnewMassageCome]=useState(false)
+
+    //all massage notification section 
+    const chateContext=useContext(Chate_Create_Context);
+    const [massage,setmassage]=useState([])
 
     //At first time connection with database make room to clinet to join in it
     useEffect(()=>{
@@ -64,6 +74,63 @@ const Navbar=()=>{
 
 
 
+
+
+
+
+
+
+
+
+
+    //------------------------------------massage notification section ---------------------------------//
+
+
+
+  useEffect(()=>{
+      axios.get(`${process.env.REACT_APP_API}GetAllMassage/${mydata.regusterid}`).then((data)=>{
+        setmassage(data.data.filter((a)=>(a.showmassage=="false")))
+      })
+  },[])
+
+
+
+
+  useEffect(()=>{
+
+      //hoin same room with the sender
+      socket.emit("private-massage-room",{regusterid:mydata.regusterid})
+      
+      //get the new massage from frend
+      socket.on("accept-privet-massage",(data)=>{
+        setnewMassageCome(data)
+      })
+  },[socket])
+
+
+
+  //if the user open chate change all shown to true
+  useEffect(()=>{
+    //change 
+    if(chateContext.ChateOpenId!==false){
+      let dataFilter=massage.filter((data)=>(data.chatId!==chateContext.ChateOpenId))
+      //set the data to shhown here
+      setmassage(dataFilter)
+      //send request to change status chate to shown 
+      axios.get(`${process.env.REACT_APP_API}changeStausChate/${chateContext.ChateOpenId}`)
+    }
+  },[chateContext.ChateOpenId])
+
+  useEffect(()=>{
+    if(chateContext.ChateOpenId==false){
+      audio.play()
+      setmassage((prev=>[...prev,newMassageCome]))
+    }
+  },[newMassageCome])
+
+
+
+
     return(
         <div className="navbarcontainer">
                 <div className="logo">
@@ -75,7 +142,7 @@ const Navbar=()=>{
                   </span>
                 </div>
                 <Navbar2 informationbar={false}/>
-                <Navbar1 notification={notification}  ReportNotification={ReportNotification}/>
+                <Navbar1 notification={notification}  ReportNotification={ReportNotification}  massageNotification={massage}/>
        </div>
     )
 }
