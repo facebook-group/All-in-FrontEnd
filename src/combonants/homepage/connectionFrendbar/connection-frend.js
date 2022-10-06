@@ -7,7 +7,7 @@ import {FcAbout} from "react-icons/fc"
 const Connection_Frind=({onlinefrind})=>{
 
     const Addactive=(e)=>{
-        console.log(        document.querySelector(".connection-frind").classList.toggle("active")        )
+        document.querySelector(".connection-frind").classList.toggle("active")    
     }
 
     

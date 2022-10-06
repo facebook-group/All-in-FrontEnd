@@ -6,6 +6,8 @@ import axios from "axios";
 import CloseIcon from '@mui/icons-material/Close';
 import Massage2_section from "./Massege2-input-text"
 import Vedio_Call from "./Massege4-vedio-call";
+import { useContext } from "react";
+import { Chate_Create_Context } from "../../../context-api/chate-notification";
 
 
 
@@ -18,12 +20,15 @@ if(window.localStorage.mydata){
 
 const Masseges_section=({massanger,statemassenger,chate_status_open_or_close})=>{
 
+    const chateContext=useContext(Chate_Create_Context)
+
     useEffect(()=>{
         let data=axios.get(`${process.env.REACT_APP_API}user/${mydata.regusterid}`)
     },[])
 
     const closse_massenger=()=>{
         statemassenger(false)
+        chateContext.setChateOpenId(false)
     }
 
     return(

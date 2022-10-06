@@ -11,6 +11,8 @@ import "./style/style.scss"
 import Masseges_section from "./chate-area/Massege1-container-chate"
 
 import io from "socket.io-client"
+import { useContext } from "react";
+import { Chate_Create_Context } from "../../context-api/chate-notification";
 const socket=io(process.env.REACT_APP_API)
 
 let mydata
@@ -23,6 +25,8 @@ if(window.localStorage.mydata){
 
 // {onlinefrind} -->app.js get all online frend
 const Frend_Connection_Card=({onlinefrind})=>{
+
+    const ChateContext=useContext(Chate_Create_Context)
     //---------------------------------Get My Frind And Filter Dublicate---------------------------//
     const dispatch=useDispatch()
     const select=useSelector((state)=>((state.alluserdata.value)))
@@ -75,6 +79,7 @@ const Frend_Connection_Card=({onlinefrind})=>{
             setchate_status_open_or_close(true)
             let [chatId,fullName,image,myfrindid,frindid]=data.currentTarget.getAttribute("data").split(",")
             setmassenger({chatId:chatId,fullName:fullName,image:image,myfrindid:myfrindid,frindid:frindid})
+            ChateContext.setChateOpenId(chatId)
         }
 
 

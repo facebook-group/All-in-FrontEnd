@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useContext, useEffect, useRef, useState } from "react"
 
 import SendIcon from '@mui/icons-material/Send';
 
@@ -20,9 +20,11 @@ if(window.localStorage.mydata){
 
 // {massanger} is statues of the massenger open or close if open will get all id
 const Massage2_section=({massanger})=>{
-    const [allmassage,setallmassage]=useState()
-    const [acceptmassage,setacceptmassage]=useState()
+    const [allmassage,setallmassage]=useState([])
     const massage_Filed=useRef();
+
+    const [itemShown,setItemSwon]=useState(false)
+
 
 
 
@@ -33,21 +35,28 @@ const Massage2_section=({massanger})=>{
         })
     },[])
 
+
+
     useEffect(()=>{
-        //join to the privet room section 
-        //soooooooooo important infrmation most the room spame place with the socket get
+        //hoin same room with the sender
         socket.emit("private-massage-room",{regusterid:mydata.regusterid})
+        
+        //get the new massage from frend
         socket.on("accept-privet-massage",(data)=>{
-            setallmassage(prevArray => [...prevArray, data])
-            socket.emit("stateofchat",{chatId:data.chatId,regusterid:data.myfrindid})
+            data.showmassage=true
+            setItemSwon(true)
+
+            setallmassage(prevArray => [...prevArray, data]) 
+            
+          // if the user open the chate the accepter will send is the massage watch
+          socket.emit("show-massage-or-not",{chatId:data.chatId,regusterid:data.myfrindid,showmassage:true})
+
+          socket.on("i-Show-your-massage",(data)=>{
+            setItemSwon(true)
+          })
         })
-        socket.on("statusofmassage",(statusofmassage)=>{
-            setacceptmassage(true)
-        })    
-
-
-
     },[socket])
+
 
 
 
@@ -66,10 +75,9 @@ const Massage2_section=({massanger})=>{
 
 
 
-
     return(
         <>
-            <Massrg_section3 allmassage={allmassage}  />
+            <Massrg_section3 allmassage={allmassage} itemShown={itemShown} />
             <div className="input-section">
                   <SendIcon className="icon" onClick={send_massage}/>
                   <textarea type="text"  ref={massage_Filed} className="input-button" placeholder="Text here ....."/>
