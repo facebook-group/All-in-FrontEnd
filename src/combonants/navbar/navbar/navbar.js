@@ -123,7 +123,6 @@ const Navbar=()=>{
 
   useEffect(()=>{
     if(chateContext.ChateOpenId==false){
-      audio.play()
       setmassage((prev=>[...prev,newMassageCome]))
     }
   },[newMassageCome])

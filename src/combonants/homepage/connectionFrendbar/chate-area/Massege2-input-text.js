@@ -36,7 +36,6 @@ const Massage2_section=({massanger})=>{
     },[])
 
 
-
     useEffect(()=>{
         //hoin same room with the sender
         socket.emit("private-massage-room",{regusterid:mydata.regusterid})
@@ -49,12 +48,15 @@ const Massage2_section=({massanger})=>{
             setallmassage(prevArray => [...prevArray, data]) 
             
           // if the user open the chate the accepter will send is the massage watch
-          socket.emit("show-massage-or-not",{chatId:data.chatId,regusterid:data.myfrindid,showmassage:true})
+          socket.emit("show-massage-or-not",{chatId:data.chatId,regusterid:data.frindid,showmassage:true})
 
-          socket.on("i-Show-your-massage",(data)=>{
-            setItemSwon(true)
-          })
         })
+        socket.on("massageShowenOrNor",(data)=>{
+            if(data.regusterid==mydata.regusterid){
+                setItemSwon(true)
+            }
+        })
+
     },[socket])
 
 

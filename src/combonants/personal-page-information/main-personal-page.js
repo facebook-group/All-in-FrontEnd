@@ -3,6 +3,8 @@ import React, { useEffect } from "react"
 import { useState } from "react";
 import { useContext } from "react";
 import { RegusterId_Create_Context } from "../context-api/personal-page";
+import Information_bar from "../homepage/InformationBar/information-bar";
+import Movei_file from "../homepage/movei-bar/Movei_file";
 import Card_Post from "../homepage/posts/card/card";
 import HerderPersonal_page_information from "./personal-page/header-personal-page";
 
@@ -30,6 +32,7 @@ const Personal_page_information=()=>{
 
     return(
         <ul className="main-page-holder">
+            <Information_bar/>
             <li className="container-information">
                 {DataUse!==false?<HerderPersonal_page_information personal_data={DataUse}/>:<></>}
             </li>
@@ -38,6 +41,7 @@ const Personal_page_information=()=>{
                     <Card_Post postdata={data} key={i}/>
                 )):<></>}
             </li>
+            <Movei_file/>
         </ul>
     )
 }

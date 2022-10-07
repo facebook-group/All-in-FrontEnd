@@ -97,7 +97,6 @@ const Navbar1=({notification,ReportNotification,massageNotification})=>{
     useEffect(()=>{
         let newData={}
         if(massageNotification.length>0){
-            console.log(massageNotification)
             massageNotification.forEach((data)=>{
 
                 if(newData[data.chatId]==undefined){
@@ -118,9 +117,6 @@ const Navbar1=({notification,ReportNotification,massageNotification})=>{
         showMassageSection==false?setshowMassageSection(true):setshowMassageSection(false)
 
     }
-
-
-    console.log(CustomMassage)
 
 
 
