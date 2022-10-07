@@ -5,8 +5,16 @@ body {
 }
 
 .main-page-holder {
-  display: flex;  flex-wrap: wrap; 
-  margin: 70px 100px; justify-content: space-around;
+  justify-content: space-around;
+  .container-postet {
+    width: 55vw; margin-left: auto; margin-right: auto;
+  }
+  .container-information {
+    width: 55vw; margin-left: auto; margin-right: auto;
+    margin-top: 130px; margin-bottom: 20px;
+
+  }
+
 
 }
 
@@ -17,22 +25,24 @@ body {
   }
 }
 .personal-page-container {
-  background-color: rgba(255, 255, 255, 0.356);padding: 15px;
-  margin-left: auto; margin-right: auto; margin-top: 100px; position: relative;
-  border-radius: 20px;
+  background-color:white;
+  margin-left: auto; margin-right: auto; 
+  border-radius: 10px; position: relative;
+
   .personalImage {
-    border: 3px solid rgba(71,72,84,0.74); border-radius: 50%; width: 150px; height: 150px;
-    position: absolute; left: 50%; top: 0;transform: translate(-50%,-50%);
+    border: 3px solid rgba(71,72,84,0.74); border-radius: 50%; width: 130px; height: 130px;
+    position: absolute; left: 50%; top: 0; transform: translate(-50%,-50%);
+
   }
 
   .collection-text {
     text-align: center; display: flex; justify-content: space-around;
-    margin-top: 70px;
+    margin-top: 100px; padding: 30px 0px;
     li {
 
       div{
         display: flex; align-items: center; justify-content: start;
-        padding: 10px;
+        padding: 5px 0px;
       }
 
     }
@@ -50,7 +60,7 @@ body {
 
 
 .all-frind-container {
-  display: flex; padding: 20px 50px;
+  display: flex; padding: 20px 80px; gap: 5px; cursor: pointer;
   img{
     width: 100px; height: 100px; border-radius: 10px;
   }

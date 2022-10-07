@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import Moment from 'react-moment';
-import style from "../../../style_combonants/Style-combonants";
+
+
+import {FcCheckmark} from "react-icons/fc"
 
 
 
@@ -18,6 +20,7 @@ const Massrg_section3=({allmassage,itemShown})=>{
     },[allmassage])
 
 
+
     
     return(
         <>
@@ -28,10 +31,10 @@ const Massrg_section3=({allmassage,itemShown})=>{
                                 <div className="sender" key={i}>
                                         <div className="text">
                                             <img src={image} alt="" style={{width:"30px",height:"30px",borderRadius:"50px",marginRight:"5px"}} />
-                                            <div className="text-container">
+                                            <div className="text-container" style={{position:"relative"}}>
                                                 <p className="massenger-text">{text}</p>
                                                 <p className="time-section"><Moment fromNow>{createdAt}</Moment></p>
-                                                <p>{itemShown}</p>
+                                                 {  (allmassage[allmassage.length-1]?.showmassage==true||itemShown==true)?<p style={{position:"absolute",left:"-40px",bottom:"-13px"}}><FcCheckmark/></p>:<></>}  
                                             </div>
                                         </div>
                                         <p ref={lastthing}></p>
