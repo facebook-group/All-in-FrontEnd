@@ -10,6 +10,7 @@ import axios from 'axios';
 //Style Section The Css file And Class Have Style
 import logo from "../../../assest/logo.png";
 import { v4 as uuidv4 } from 'uuid';
+import imageL from "../../../assest/authntication/signup.png"
 
 
 
@@ -73,48 +74,57 @@ const initialValues={
 
 
   return (
+    <div className="container-all-signup">
           <div class="center-signin-section"   >
-          <motion.img src={logo} alt="" className="image-forSignin"     initial={{opacity:0}} animate={{opacity:1}}     transition={{ duration: 1 }}/>
+              <motion.img src={logo} alt="" className="image-forSignin"     initial={{opacity:0}} animate={{opacity:1}}     transition={{ duration: 1 }}/>
 
-                  <Formik
-                      initialValues={initialValues}
-                      validationSchema={SignupSchema}
-                      onSubmit={Get_AllData}
-                      >
-                      {({ errors, touched }) => (
-                          <Form method="post">
-                                  <div class="txt_field">
-                                      <Field type="text"  name="fullName"  required />
-                                          <span></span>
-                                      {errors.fullName && touched.fullName ? <div className='error-section'>{errors.fullName}</div> : null}
-                                      <label>FullName</label>
-                                  </div>
+                      <Formik
+                          initialValues={initialValues}
+                          validationSchema={SignupSchema}
+                          onSubmit={Get_AllData}
+                          >
+                          {({ errors, touched }) => (
+                              <Form method="post">
+                                      <div class="txt_field">
+                                          <Field type="text"  name="fullName"  required />
+                                              <span></span>
+                                          {errors.fullName && touched.fullName ? <div className='error-section'>{errors.fullName}</div> : null}
+                                          <label>FullName</label>
+                                      </div>
 
-                                  <div class="txt_field">
-                                      <Field type="text" required name="email" />
-                                          <span></span>
-                                      {errors.email && touched.email ? <div className='error-section'>{errors.email}</div> : null}
-                                      <label>Email</label>
-                                  </div>
-                                  <div class="txt_field">
-                                      <Field type="password"  name="password"  required />
-                                          <span></span>
-                                      {errors.password && touched.password ? <div className='error-section'>{errors.password}</div> : null}
-                                      <label>Password</label>
-                                  </div>
+                                      <div class="txt_field">
+                                          <Field type="text" required name="email" />
+                                              <span></span>
+                                          {errors.email && touched.email ? <div className='error-section'>{errors.email}</div> : null}
+                                          <label>Email</label>
+                                      </div>
+                                      <div class="txt_field">
+                                          <Field type="password"  name="password"  required />
+                                              <span></span>
+                                          {errors.password && touched.password ? <div className='error-section'>{errors.password}</div> : null}
+                                          <label>Password</label>
+                                      </div>
 
-                                  <SignupPhoto data={photodata} />
+                                      <SignupPhoto data={photodata} />
 
-                                  <motion.input type="submit" value="Sign Up"  whileHover={{scale:1.1 ,    transition: { duration: 1 ,yoyo:Infinity},}}  />
-                                  {statusEmail==true? <motion.p   initial={{scale:1}} animate={{scale:1.2}} transition={{duration:1,yoyo:Infinity}} className="verification"  style={{marginLeft:"102px",marginTop:"15px"}}>Email Is Taken</motion.p>:<p></p>}              
+                                      <motion.input type="submit" value="Sign Up"  whileHover={{scale:1.1 ,    transition: { duration: 1 ,yoyo:Infinity},}}  />
+                                      {statusEmail==true? <motion.p   initial={{scale:1}} animate={{scale:1.2}} transition={{duration:1,yoyo:Infinity}} className="verification"  style={{marginLeft:"102px",marginTop:"15px"}}>Email Is Taken</motion.p>:<p></p>}              
 
-                          </Form>
+                              </Form>
 
-                  )}
-                  </Formik>   
-                  <p style={{marginBottom:"30px"}}></p>
+                      )}
+                      </Formik>   
+                      <p style={{marginBottom:"30px"}}></p>
+              </div>
+
+
+          <div className="right-side">
+                <motion.img src={imageL} alt=""  initial={{x:"-100vw"}} animate={{x:"0"}} transition={{duration:.5}}/>
+                <motion.div initial={{y:"-100vh"}} animate={{y:"0px"}} transition={{duration:1.5}}><p>Welcome to our website dedicated to communicating between friends always</p></motion.div>
           </div>
 
+
+    </div>
   );
 }
 
