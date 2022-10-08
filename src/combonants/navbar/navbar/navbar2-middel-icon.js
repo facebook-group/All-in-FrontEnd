@@ -12,6 +12,9 @@ import {SiEpicgames} from "react-icons/si";
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import { useNavigate } from "react-router";
+import {BiGame} from "react-icons/bi"
+
+import {BiBadgeCheck} from "react-icons/bi"
 
 
 const Navbar2=()=>{
@@ -43,12 +46,12 @@ const Navbar2=()=>{
             <BottomNavigationAction
             className="button-color-section"
               value="/about"
-              icon={<SiHatenabookmark  style={{fontSize:"2em"}}/>} />
+              icon={<BiBadgeCheck  style={{fontSize:"2em"}}/>} />
 
             <BottomNavigationAction
               className="button-color-section"
               value="/games"
-              icon={<SiEpicgames  style={{fontSize:"2em"}}/>} />
+              icon={<BiGame  style={{fontSize:"2em"}}/>} />
 
             </BottomNavigation>
 
