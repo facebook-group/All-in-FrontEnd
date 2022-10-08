@@ -44,7 +44,7 @@ const SignupPhoto=({data})=>{
             <Stack direction="row" alignItems="center" spacing={2} >
                 <label htmlFor="contained-button-file">
                     <Input accept="image/*" id="contained-button-file" multiple type="file"  onChange={getImage_file} />
-                    <Button variant="contained" component="span" sx={{width:"200px", marginLeft:"40px",marginBottom:"20px"}} >
+                    <Button variant="contained" component="span" sx={{width:"200px", marginLeft:"40px",marginBottom:"20px",backgroundColor:"rgb(75, 75, 197)"}} >
                       Upload
                       <MdAddAPhoto style={{fontSize:"1.5em",marginLeft:"5px"}}/>
                     </Button>
