@@ -8,6 +8,7 @@ import {BrowserRouter,Route,Routes} from "react-router-dom"
  import Catalog from './combonants/movies/pages/Catalog';
 import Detail from './combonants/movies/pages/detail/Detail';
  import MovieGrid from './combonants/movies/components/movie-grid/MovieGrid'
+ import Movies from './combonants/movies/movie'
 
 //Authntication Import Combonants
 import SignUp from "./combonants/authintcation/signup/sign1-main";
@@ -26,6 +27,7 @@ import MyFrend from "./combonants/frind/Frend3-MyFrind/myfrend";
 import HomePage from "./combonants/homepage/homepage";
 import Vedio_call_main from "./combonants/vedio_call/vedio_call_main";
 
+import About_Us from "../src/combonants/about-us/About_Us"
 
 //other 
 import Personal_page_information from "./combonants/personal-page-information/main-personal-page";
@@ -44,7 +46,6 @@ import { ShwoBar_DataProvider } from "./combonants/context-api/show-information-
 import { Vediocall_DataProvider } from "./combonants/context-api/vedio-call";
 import { RegusterId_DataProvider } from "./combonants/context-api/personal-page";
 import { Chate_DataProvider } from "./combonants/context-api/chate-notification";
-import About_Us from "./combonants/about-us/About_Us";
 
 const App=()=>{
   return(
