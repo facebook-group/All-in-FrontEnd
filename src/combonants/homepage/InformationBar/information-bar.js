@@ -35,7 +35,12 @@ const Information_bar=()=>{
     }
 
     useEffect(()=>{
-      document.querySelector(".information-bar").classList.toggle("active-element")
+      console.log(showIn_formation_Context)
+      if(showIn_formation_Context.showBar==true){
+        document.querySelector(".information-bar").classList.add("active-element")
+      }else{
+        document.querySelector(".information-bar").classList.remove("active-element")
+      }
     },[showIn_formation_Context])
 
 

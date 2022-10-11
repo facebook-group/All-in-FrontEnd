@@ -106,34 +106,24 @@
 
 
 
-@media screen and (max-width:800px) {
-    .createpostcontainer{
-       width: 80vw; margin-left: 100px;
-    }
+
+@media screen and (max-width:900px) {
     .createpost-module {
-        padding: 20px;
+        .interior{
+            width: 90vw; height: 90vh; z-index: 100000000000000000000000000000000;
+        }
     }
+    .createpostcontainer{
+        width: 80vw; margin-left: 100px;
+     }
+ 
 }
+
+
 @media screen and (max-width:500px) {
     .createpostcontainer{
        width: 85vw; margin-left: 30px;
     }
-    .createpost-module {
-        padding: 50px;
-    }
 
 }
-
-@media screen and (max-width:1200) {
-    .createpost-module {
-        padding: 50px;
-        .interior {
-            margin: 50px;
-        }
-    }
-
-}
-
-
-
 
