@@ -62,8 +62,18 @@ body {
 
 @media screen and (max-width:800px) {
   .main-page-holder {
-    margin: 70px 15px;
+    margin: 100px 15px;
 
+  }
+  .personal-page-container{
+    .collection-text {
+      padding: 60px 0px;
+    } 
+    
+
+  }
+  .all-frind-container{
+    padding: 20px 10px; 
   }
   .main-page-holder  {
     width: 95vw;
@@ -82,3 +92,17 @@ body {
 
 
 
+
+@media screen and (max-width:500px) {
+  .main-page-holder {
+    margin: 100px 15px;
+
+  }
+  .personal-page-container{
+    .collection-text {
+      padding: 60px 0px;
+    } 
+    
+
+  }
+}
