@@ -18,12 +18,6 @@ body {
 
 }
 
-@media screen and (max-width:800px) {
-  .main-page-holder {
-    margin: 70px 15px;
-
-  }
-}
 .personal-page-container {
   background-color:white;
   margin-left: auto; margin-right: auto; 
@@ -66,7 +60,22 @@ body {
   }
 }
 
+@media screen and (max-width:800px) {
+  .main-page-holder {
+    margin: 70px 15px;
 
+  }
+  .main-page-holder  {
+    width: 95vw;
+
+    .container-information {
+      width: 95vw;
+    }
+    .container-postet{
+      width: 95vw;
+    }
+  }
+}
 
 
 
